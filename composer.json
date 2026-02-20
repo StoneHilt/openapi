@@ -1,6 +1,6 @@
 {
-    "name": "vyuldashev/laravel-openapi",
-    "description": "Generate OpenAPI Specification for Laravel Applications",
+    "name": "stonehilt/openapi",
+    "description": "Generates OpenAPI Specification for Laravel Applications",
     "keywords": [
         "laravel",
         "openapi",
@@ -14,30 +14,36 @@
     "license": "MIT",
     "authors": [
         {
+            "name": "Anthony Green",
+            "email": "openapi@stonehilt.com",
+            "homepage": "https://stonehilt.com"
+        },
+        {
             "name": "Vladimir Yuldashev",
             "email": "misterio92@gmail.com"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.4",
         "ext-json": "*",
         "doctrine/dbal": "^2.6|^3.0",
-        "goldspecdigital/oooas": "^2.7.1",
-        "laravel/framework": "5.8.*|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+        "laravel/framework": "^12.0",
         "phpdocumentor/reflection-docblock": "^5.0"
     },
     "require-dev": {
         "orchestra/testbench": "^5.3|^6.0|^7.0|^9.0|^10.0",
-        "phpunit/phpunit": "^9.5.13|^10.5|^11.5"
+        "phpunit/phpunit": "^11.5",
+        "friendsofphp/php-cs-fixer": "^3",
+        "justinrainbow/json-schema": "^5.2"
     },
     "autoload": {
         "psr-4": {
-            "Vyuldashev\\LaravelOpenApi\\": "src/"
+            "StoneHilt\\OpenApi\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vyuldashev\\LaravelOpenApi\\Tests\\": "tests/",
+            "StoneHilt\\OpenApi\\Tests\\": "tests/",
             "Examples\\Petstore\\": "examples/petstore/"
         }
     },
@@ -47,10 +53,22 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vyuldashev\\LaravelOpenApi\\OpenApiServiceProvider"
+                "StoneHilt\\OpenApi\\OpenApiServiceProvider"
             ]
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "suggest": {
+        "justinrainbow/json-schema": "Required to perform validation (^5.2)"
+    },
+    "scripts": {
+        "test": [
+            "@test:style",
+            "@test:unit"
+        ],
+        "test:style": "@fix:style --dry-run",
+        "test:unit": "@php vendor/bin/phpunit",
+        "fix:style": "@php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.php --allow-risky=yes --diff --verbose"
+    }
 }

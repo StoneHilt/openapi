@@ -2,9 +2,9 @@
 
 namespace Examples\Petstore\OpenApi\Parameters;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Parameter;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Schema;
-use Vyuldashev\LaravelOpenApi\Factories\ParametersFactory;
+use StoneHilt\OpenApi\Objects\Parameter;
+use StoneHilt\OpenApi\Objects\Schema;
+use StoneHilt\OpenApi\Factories\ParametersFactory;
 
 class ListPetsParameters extends ParametersFactory
 {

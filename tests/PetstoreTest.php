@@ -1,6 +1,6 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Tests;
+namespace StoneHilt\OpenApi\Tests;
 
 use Examples\Petstore\PetController;
 use Illuminate\Support\Facades\Route;

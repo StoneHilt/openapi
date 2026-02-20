@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Contracts;
+namespace StoneHilt\OpenApi\Contracts;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\PathItem;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Objects\PathItem;
+use StoneHilt\OpenApi\RouteInformation;
 
 interface PathMiddleware
 {

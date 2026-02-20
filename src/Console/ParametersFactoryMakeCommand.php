@@ -1,6 +1,6 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Console;
+namespace StoneHilt\OpenApi\Console;
 
 use Illuminate\Console\GeneratorCommand;
 use Illuminate\Support\Str;

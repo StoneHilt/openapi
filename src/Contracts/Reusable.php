@@ -1,6 +1,6 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Contracts;
+namespace StoneHilt\OpenApi\Contracts;
 
 /**
  * Implementing this interface will indicate that object should be included in components object.

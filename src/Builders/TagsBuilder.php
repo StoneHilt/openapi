@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders;
+namespace StoneHilt\OpenApi\Builders;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\ExternalDocs;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Tag;
+use StoneHilt\OpenApi\Objects\ExternalDocs;
+use StoneHilt\OpenApi\Objects\Tag;
 use Illuminate\Support\Arr;
 
 class TagsBuilder

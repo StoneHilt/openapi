@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Parameter;
-use Vyuldashev\LaravelOpenApi\Concerns\Referencable;
+use StoneHilt\OpenApi\Objects\Parameter;
+use StoneHilt\OpenApi\Concerns\Referencable;
 
 abstract class ParametersFactory
 {

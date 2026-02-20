@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders;
+namespace StoneHilt\OpenApi\Builders;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Server;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\ServerVariable;
+use StoneHilt\OpenApi\Objects\Server;
+use StoneHilt\OpenApi\Objects\ServerVariable;
 use Illuminate\Support\Arr;
 
 class ServersBuilder

@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Vyuldashev\LaravelOpenApi;
+namespace StoneHilt\OpenApi;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
-use Vyuldashev\LaravelOpenApi\Builders\Components\CallbacksBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\RequestBodiesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\ResponsesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\SchemasBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\SecuritySchemesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\ComponentsBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\InfoBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\PathsBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\ServersBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\TagsBuilder;
+use StoneHilt\OpenApi\Builders\Components\CallbacksBuilder;
+use StoneHilt\OpenApi\Builders\Components\RequestBodiesBuilder;
+use StoneHilt\OpenApi\Builders\Components\ResponsesBuilder;
+use StoneHilt\OpenApi\Builders\Components\SchemasBuilder;
+use StoneHilt\OpenApi\Builders\Components\SecuritySchemesBuilder;
+use StoneHilt\OpenApi\Builders\ComponentsBuilder;
+use StoneHilt\OpenApi\Builders\InfoBuilder;
+use StoneHilt\OpenApi\Builders\PathsBuilder;
+use StoneHilt\OpenApi\Builders\ServersBuilder;
+use StoneHilt\OpenApi\Builders\TagsBuilder;
 
 class OpenApiServiceProvider extends ServiceProvider
 {

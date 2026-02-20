@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Attributes;
+namespace StoneHilt\OpenApi\Attributes;
 
 use Attribute;
 use InvalidArgumentException;
-use Vyuldashev\LaravelOpenApi\Factories\RequestBodyFactory;
+use StoneHilt\OpenApi\Factories\RequestBodyFactory;
 
 #[Attribute(Attribute::TARGET_METHOD)]
 class RequestBody

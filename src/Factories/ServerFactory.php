@@ -1,8 +1,8 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Server;
+use StoneHilt\OpenApi\Objects\Server;
 
 abstract class ServerFactory
 {

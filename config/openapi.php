@@ -31,7 +31,7 @@ return [
             ],
 
             'security' => [
-                // GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityRequirement::create()->securityScheme('JWT'),
+                // StoneHilt\OpenApi\Objects\SecurityRequirement::create()->securityScheme('JWT'),
             ],
 
             // Non standard attributes used by code/doc generation tools can be added here

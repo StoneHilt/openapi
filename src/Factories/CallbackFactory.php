@@ -1,8 +1,8 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\PathItem;
+use StoneHilt\OpenApi\Objects\PathItem;
 
 abstract class CallbackFactory
 {

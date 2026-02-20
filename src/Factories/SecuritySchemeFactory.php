@@ -1,8 +1,8 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityScheme;
+use StoneHilt\OpenApi\Objects\SecurityScheme;
 
 abstract class SecuritySchemeFactory
 {

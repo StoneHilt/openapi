@@ -2,9 +2,9 @@
 
 namespace DummyNamespace;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Parameter;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Schema;
-use Vyuldashev\LaravelOpenApi\Factories\ParametersFactory;
+use StoneHilt\OpenApi\Objects\Parameter;
+use StoneHilt\OpenApi\Objects\Schema;
+use StoneHilt\OpenApi\Factories\ParametersFactory;
 
 class DummyClass extends ParametersFactory
 {

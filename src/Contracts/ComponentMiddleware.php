@@ -1,8 +1,8 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Contracts;
+namespace StoneHilt\OpenApi\Contracts;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Components;
+use StoneHilt\OpenApi\Objects\Components;
 
 interface ComponentMiddleware
 {

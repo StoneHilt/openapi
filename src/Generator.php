@@ -1,14 +1,14 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi;
+namespace StoneHilt\OpenApi;
 
-use GoldSpecDigital\ObjectOrientedOAS\OpenApi;
+use StoneHilt\OpenApi\OpenApi;
 use Illuminate\Support\Arr;
-use Vyuldashev\LaravelOpenApi\Builders\ComponentsBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\InfoBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\PathsBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\ServersBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\TagsBuilder;
+use StoneHilt\OpenApi\Builders\ComponentsBuilder;
+use StoneHilt\OpenApi\Builders\InfoBuilder;
+use StoneHilt\OpenApi\Builders\PathsBuilder;
+use StoneHilt\OpenApi\Builders\ServersBuilder;
+use StoneHilt\OpenApi\Builders\TagsBuilder;
 
 class Generator
 {

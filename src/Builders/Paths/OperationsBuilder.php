@@ -1,21 +1,21 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths;
+namespace StoneHilt\OpenApi\Builders\Paths;
 
-use GoldSpecDigital\ObjectOrientedOAS\Exceptions\InvalidArgumentException;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Operation;
+use StoneHilt\OpenApi\Exceptions\InvalidArgumentException;
+use StoneHilt\OpenApi\Objects\Operation;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\DocBlock;
-use Vyuldashev\LaravelOpenApi\Attributes\Operation as OperationAttribute;
-use Vyuldashev\LaravelOpenApi\Builders\ExtensionsBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\CallbacksBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\ParametersBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\RequestBodyBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\ResponsesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Paths\Operation\SecurityBuilder;
-use Vyuldashev\LaravelOpenApi\Factories\ServerFactory;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Attributes\Operation as OperationAttribute;
+use StoneHilt\OpenApi\Builders\ExtensionsBuilder;
+use StoneHilt\OpenApi\Builders\Paths\Operation\CallbacksBuilder;
+use StoneHilt\OpenApi\Builders\Paths\Operation\ParametersBuilder;
+use StoneHilt\OpenApi\Builders\Paths\Operation\RequestBodyBuilder;
+use StoneHilt\OpenApi\Builders\Paths\Operation\ResponsesBuilder;
+use StoneHilt\OpenApi\Builders\Paths\Operation\SecurityBuilder;
+use StoneHilt\OpenApi\Factories\ServerFactory;
+use StoneHilt\OpenApi\RouteInformation;
 
 class OperationsBuilder
 {
