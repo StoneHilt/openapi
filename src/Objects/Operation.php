@@ -56,7 +56,7 @@ class Operation extends BaseObject
     /**
      * @var ExternalDocs|null
      */
-    protected ?array $externalDocs = null;
+    protected ?ExternalDocs $externalDocs = null;
 
     /**
      * @var string|null
@@ -71,7 +71,7 @@ class Operation extends BaseObject
     /**
      * @var RequestBody|null
      */
-    protected ?bool $requestBody = null;
+    protected ?RequestBody $requestBody = null;
 
     /**
      * @var Response[]|null

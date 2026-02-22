@@ -79,10 +79,10 @@ abstract class BaseObject implements JsonSerializable
 
     /**
      * @param string $key
-     * @param string $value
+     * @param mixed $value
      * @return $this
      */
-    public function x(string $key, string $value = Extensions::X_EMPTY_VALUE): static
+    public function x(string $key, mixed $value = Extensions::X_EMPTY_VALUE): static
     {
         $instance = clone $this;
 

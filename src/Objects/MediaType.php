@@ -31,9 +31,9 @@ class MediaType extends BaseObject
     protected ?string $mediaType = null;
 
     /**
-     * @var Schema|null
+     * @var SchemaContract|null
      */
-    protected ?Schema $schema = null;
+    protected ?SchemaContract $schema = null;
 
     /**
      * @var Example|null
@@ -144,7 +144,7 @@ class MediaType extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Contracts\SchemaContract|null $schema
+     * @param SchemaContract|null $schema
      * @return static
      */
     public function schema(?SchemaContract $schema): static

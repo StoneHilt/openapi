@@ -78,9 +78,9 @@ class Parameter extends BaseObject
     protected ?bool $explode = null;
 
     /**
-     * @var string|null
+     * @var bool|null
      */
-    protected ?string $allowReserved = null;
+    protected ?bool $allowReserved = null;
 
     /**
      * @var Schema|null

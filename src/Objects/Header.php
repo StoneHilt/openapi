@@ -61,14 +61,14 @@ class Header extends BaseObject
     protected ?bool $explode = null;
 
     /**
-     * @var string|null
+     * @var bool|null
      */
-    protected ?string $allowReserved = null;
+    protected ?bool $allowReserved = null;
 
     /**
      * @var Schema|null
      */
-    protected ?Schema $schema = null;
+    protected ?SchemaContract $schema = null;
 
     /**
      * @var mixed|null

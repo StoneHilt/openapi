@@ -13,9 +13,9 @@ use StoneHilt\OpenApi\Utilities\Arr;
 class Not extends BaseObject implements SchemaContract
 {
     /**
-     * @var Schema|null
+     * @var SchemaContract|null
      */
-    protected ?Schema $schema = null;
+    protected ?SchemaContract $schema = null;
 
     /**
      * @param Schema|null $schema
