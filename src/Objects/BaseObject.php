@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace StoneHilt\OpenApi\Objects;
 
+use StoneHilt\OpenApi\Collections\ExtensionCollection;
 use StoneHilt\OpenApi\Exceptions\PropertyDoesNotExistException;
-use StoneHilt\OpenApi\Utilities\Extensions;
 use JsonSerializable;
 
 /**
@@ -26,9 +26,9 @@ abstract class BaseObject implements JsonSerializable
     protected ?string $ref = null;
 
     /**
-     * @var Extensions
+     * @var ExtensionCollection
      */
-    protected ?Extensions $extensions = null;
+    protected ExtensionCollection $extensions;
 
     /**
      * BaseObject constructor.
@@ -38,7 +38,7 @@ abstract class BaseObject implements JsonSerializable
     public function __construct(?string $objectId = null)
     {
         $this->objectId = $objectId;
-        $this->extensions = new Extensions();
+        $this->extensions = new ExtensionCollection();
     }
 
     /**
@@ -82,7 +82,7 @@ abstract class BaseObject implements JsonSerializable
      * @param mixed $value
      * @return $this
      */
-    public function x(string $key, mixed $value = Extensions::X_EMPTY_VALUE): static
+    public function x(string $key, mixed $value = ExtensionCollection::X_EMPTY_VALUE): static
     {
         $instance = clone $this;
 

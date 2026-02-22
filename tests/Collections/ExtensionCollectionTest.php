@@ -1,6 +1,6 @@
 <?php
 
-namespace StoneHilt\OpenApi\Tests\Objects;
+namespace StoneHilt\OpenApi\Tests\Collections;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use StoneHilt\OpenApi\Exceptions\PropertyDoesNotExistException;
@@ -11,11 +11,16 @@ use StoneHilt\OpenApi\Objects\Response;
 use StoneHilt\OpenApi\Objects\Schema;
 use StoneHilt\OpenApi\Tests\TestCase;
 
-class ExtensionsTest extends TestCase
+/**
+ * Class ExtensionCollectionTest
+ *
+ * @package StoneHilt\OpenApi\Tests\Collections
+ */
+class ExtensionCollectionTest extends TestCase
 {
     /**
      * @test
-     * @param string|\StoneHilt\OpenApi\Objects\Schema $schema
+     * @param string|Schema $schema
      */
     #[DataProvider('provider_schemasData')]
     public function create_with_extensions($schema)
@@ -59,7 +64,7 @@ class ExtensionsTest extends TestCase
 
     /**
      * @test
-     * @param string|\StoneHilt\OpenApi\Objects\Schema $schema
+     * @param string|Schema $schema
      */
     #[DataProvider('provider_schemasData')]
     public function get_single_extension($schema)
@@ -71,7 +76,7 @@ class ExtensionsTest extends TestCase
 
     /**
      * @test
-     * @param string|\StoneHilt\OpenApi\Objects\Schema $schema
+     * @param string|Schema $schema
      */
     #[DataProvider('provider_schemasData')]
     public function get_single_extension_does_not_exist($schema)
@@ -85,7 +90,7 @@ class ExtensionsTest extends TestCase
 
     /**
      * @test
-     * @param string|\StoneHilt\OpenApi\Objects\Schema $schema
+     * @param string|Schema $schema
      */
     #[DataProvider('provider_schemasData')]
     public function get_all_extensions($schema)
