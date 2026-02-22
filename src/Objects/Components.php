@@ -8,67 +8,67 @@ use StoneHilt\OpenApi\Contracts\SchemaContract;
 use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
- * @property \StoneHilt\OpenApi\Objects\Schema[]|null $schemas
- * @property \StoneHilt\OpenApi\Objects\Response[]|null $responses
- * @property \StoneHilt\OpenApi\Objects\Parameter[]|null $parameters
- * @property \StoneHilt\OpenApi\Objects\Example[]|null $examples
- * @property \StoneHilt\OpenApi\Objects\RequestBody[]|null $requestBodies
- * @property \StoneHilt\OpenApi\Objects\Header[]|null $headers
- * @property \StoneHilt\OpenApi\Objects\SecurityScheme[]|null $securitySchemes
- * @property \StoneHilt\OpenApi\Objects\Link[]|null $links
+ * @property Schema[]|null $schemas
+ * @property Response[]|null $responses
+ * @property Parameter[]|null $parameters
+ * @property Example[]|null $examples
+ * @property RequestBody[]|null $requestBodies
+ * @property Header[]|null $headers
+ * @property SecurityScheme[]|null $securitySchemes
+ * @property Link[]|null $links
  */
 class Components extends BaseObject
 {
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema[]|null
+     * @var Schema[]|null
      */
-    protected $schemas;
+    protected ?array $schemas = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Response[]|null
+     * @var Response[]|null
      */
-    protected $responses;
+    protected ?array $responses = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Parameter[]|null
+     * @var Parameter[]|null
      */
-    protected $parameters;
+    protected ?array $parameters = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Example[]|null
+     * @var Example[]|null
      */
-    protected $examples;
+    protected ?array $examples = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\RequestBody[]|null
+     * @var RequestBody[]|null
      */
-    protected $requestBodies;
+    protected ?array $requestBodies = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Header[]|null
+     * @var Header[]|null
      */
-    protected $headers;
+    protected ?array $headers = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\SecurityScheme[]|null
+     * @var SecurityScheme[]|null
      */
-    protected $securitySchemes;
+    protected ?array $securitySchemes = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Link[]|null
+     * @var Link[]|null
      */
-    protected $links;
+    protected ?array $links = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\PathItem[]|null
+     * @var PathItem[]|null
      */
-    protected $callbacks;
+    protected ?array $callbacks = null;
 
     /**
-     * @param \StoneHilt\OpenApi\Contracts\SchemaContract[] $schemas
+     * @param SchemaContract[] $schemas
      * @return static
      */
-    public function schemas(SchemaContract ...$schemas): self
+    public function schemas(SchemaContract ...$schemas): static
     {
         $instance = clone $this;
 
@@ -78,10 +78,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Response[] $responses
+     * @param Response[] $responses
      * @return static
      */
-    public function responses(Response ...$responses): self
+    public function responses(Response ...$responses): static
     {
         $instance = clone $this;
 
@@ -91,10 +91,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Parameter[] $parameters
+     * @param Parameter[] $parameters
      * @return static
      */
-    public function parameters(Parameter ...$parameters): self
+    public function parameters(Parameter ...$parameters): static
     {
         $instance = clone $this;
 
@@ -104,10 +104,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Example[] $examples
+     * @param Example[] $examples
      * @return static
      */
-    public function examples(Example ...$examples): self
+    public function examples(Example ...$examples): static
     {
         $instance = clone $this;
 
@@ -117,10 +117,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\RequestBody[] $requestBodies
+     * @param RequestBody[] $requestBodies
      * @return static
      */
-    public function requestBodies(RequestBody ...$requestBodies): self
+    public function requestBodies(RequestBody ...$requestBodies): static
     {
         $instance = clone $this;
 
@@ -130,10 +130,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Header[] $headers
+     * @param Header[] $headers
      * @return static
      */
-    public function headers(Header ...$headers): self
+    public function headers(Header ...$headers): static
     {
         $instance = clone $this;
 
@@ -143,10 +143,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\SecurityScheme[] $securitySchemes
+     * @param SecurityScheme[] $securitySchemes
      * @return static
      */
-    public function securitySchemes(SecurityScheme ...$securitySchemes): self
+    public function securitySchemes(SecurityScheme ...$securitySchemes): static
     {
         $instance = clone $this;
 
@@ -156,10 +156,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Link[] $links
+     * @param Link[] $links
      * @return static
      */
-    public function links(Link ...$links): self
+    public function links(Link ...$links): static
     {
         $instance = clone $this;
 
@@ -169,10 +169,10 @@ class Components extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\PathItem[] $callbacks
+     * @param PathItem[] $callbacks
      * @return static
      */
-    public function callbacks(PathItem ...$callbacks): self
+    public function callbacks(PathItem ...$callbacks): static
     {
         $instance = clone $this;
 

@@ -15,18 +15,18 @@ class ExternalDocs extends BaseObject
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var string
+     * @var string|null
      */
-    protected $url;
+    protected ?string $url = null;
 
     /**
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -39,7 +39,7 @@ class ExternalDocs extends BaseObject
      * @param string|null $url
      * @return static
      */
-    public function url(?string $url): self
+    public function url(?string $url): static
     {
         $instance = clone $this;
 

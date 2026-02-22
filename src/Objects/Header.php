@@ -15,10 +15,10 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string|null $style
  * @property bool|null $explode
  * @property bool|null $allowReserved
- * @property \StoneHilt\OpenApi\Objects\Schema|null $schema
+ * @property Schema|null $schema
  * @property mixed|null $example
- * @property \StoneHilt\OpenApi\Objects\Example[]|null $examples
- * @property \StoneHilt\OpenApi\Objects\MediaType[]|null $content
+ * @property Example[]|null $examples
+ * @property MediaType[]|null $content
  */
 class Header extends BaseObject
 {
@@ -33,63 +33,63 @@ class Header extends BaseObject
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @var bool|null
      */
-    protected $required;
+    protected ?bool $required = null;
 
     /**
      * @var bool|null
      */
-    protected $deprecated;
+    protected ?bool $deprecated = null;
 
     /**
      * @var bool|null
      */
-    protected $allowEmptyValue;
+    protected ?bool $allowEmptyValue = null;
 
     /**
      * @var string|null
      */
-    protected $style;
+    protected ?string $style = null;
 
     /**
      * @var bool|null
      */
-    protected $explode;
+    protected ?bool $explode = null;
 
     /**
      * @var string|null
      */
-    protected $allowReserved;
+    protected ?string $allowReserved = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema|null
+     * @var Schema|null
      */
-    protected $schema;
+    protected ?Schema $schema = null;
 
     /**
      * @var mixed|null
      */
-    protected $example;
+    protected mixed $example = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Example[]|null
+     * @var Example[]|null
      */
-    protected $examples;
+    protected ?array $examples = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\MediaType[]|null
+     * @var MediaType[]|null
      */
-    protected $content;
+    protected ?array $content = null;
 
     /**
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -102,7 +102,7 @@ class Header extends BaseObject
      * @param bool|null $required
      * @return static
      */
-    public function required(?bool $required = true): self
+    public function required(?bool $required = true): static
     {
         $instance = clone $this;
 
@@ -115,7 +115,7 @@ class Header extends BaseObject
      * @param bool|null $deprecated
      * @return static
      */
-    public function deprecated(?bool $deprecated = true): self
+    public function deprecated(?bool $deprecated = true): static
     {
         $instance = clone $this;
 
@@ -128,7 +128,7 @@ class Header extends BaseObject
      * @param bool|null $allowEmptyValue
      * @return static
      */
-    public function allowEmptyValue(?bool $allowEmptyValue = true): self
+    public function allowEmptyValue(?bool $allowEmptyValue = true): static
     {
         $instance = clone $this;
 
@@ -141,7 +141,7 @@ class Header extends BaseObject
      * @param string|null $style
      * @return static
      */
-    public function style(?string $style): self
+    public function style(?string $style): static
     {
         $instance = clone $this;
 
@@ -154,7 +154,7 @@ class Header extends BaseObject
      * @param bool|null $explode
      * @return static
      */
-    public function explode(?bool $explode = true): self
+    public function explode(?bool $explode = true): static
     {
         $instance = clone $this;
 
@@ -167,7 +167,7 @@ class Header extends BaseObject
      * @param bool|null $allowReserved
      * @return static
      */
-    public function allowReserved(?bool $allowReserved = true): self
+    public function allowReserved(?bool $allowReserved = true): static
     {
         $instance = clone $this;
 
@@ -177,10 +177,10 @@ class Header extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Contracts\SchemaContract|null $schema
+     * @param SchemaContract|null $schema
      * @return static
      */
-    public function schema(?SchemaContract $schema): self
+    public function schema(?SchemaContract $schema): static
     {
         $instance = clone $this;
 
@@ -193,7 +193,7 @@ class Header extends BaseObject
      * @param mixed|null $example
      * @return static
      */
-    public function example($example): self
+    public function example($example): static
     {
         $instance = clone $this;
 
@@ -203,10 +203,10 @@ class Header extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Example[] $examples
+     * @param Example[] $examples
      * @return static
      */
-    public function examples(Example ...$examples): self
+    public function examples(Example ...$examples): static
     {
         $instance = clone $this;
 
@@ -216,10 +216,10 @@ class Header extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\MediaType[] $content
+     * @param MediaType[] $content
      * @return static
      */
-    public function content(MediaType ...$content): self
+    public function content(MediaType ...$content): static
     {
         $instance = clone $this;
 

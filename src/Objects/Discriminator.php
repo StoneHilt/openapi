@@ -16,18 +16,18 @@ class Discriminator extends BaseObject
     /**
      * @var string|null
      */
-    protected $propertyName;
+    protected ?string $propertyName = null;
 
     /**
      * @var array|null
      */
-    protected $mapping;
+    protected ?array $mapping = null;
 
     /**
      * @param string|null $propertyName
      * @return static
      */
-    public function propertyName(?string $propertyName): self
+    public function propertyName(?string $propertyName): static
     {
         $instance = clone $this;
 
@@ -38,10 +38,10 @@ class Discriminator extends BaseObject
 
     /**
      * @param array $mapping
-     * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
+     * @throws InvalidArgumentException
      * @return static
      */
-    public function mapping(array $mapping): self
+    public function mapping(array $mapping): static
     {
         // Ensure the mappings are string => string.
         foreach ($mapping as $key => $value) {

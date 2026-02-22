@@ -17,28 +17,28 @@ class Example extends BaseObject
     /**
      * @var string|null
      */
-    protected $summary;
+    protected ?string $summary = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @var mixed|null
      */
-    protected $value;
+    protected mixed $value = null;
 
     /**
      * @var string|null
      */
-    protected $externalValue;
+    protected ?string $externalValue = null;
 
     /**
      * @param string|null $summary
      * @return static
      */
-    public function summary(?string $summary): self
+    public function summary(?string $summary): static
     {
         $instance = clone $this;
 
@@ -51,7 +51,7 @@ class Example extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -64,7 +64,7 @@ class Example extends BaseObject
      * @param mixed|null $value
      * @return static
      */
-    public function value($value): self
+    public function value($value): static
     {
         $instance = clone $this;
 
@@ -77,7 +77,7 @@ class Example extends BaseObject
      * @param string|null $externalValue
      * @return static
      */
-    public function externalValue(?string $externalValue): self
+    public function externalValue(?string $externalValue): static
     {
         $instance = clone $this;
 

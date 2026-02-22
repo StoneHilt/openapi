@@ -18,33 +18,33 @@ class Xml extends BaseObject
     /**
      * @var string|null
      */
-    protected $name;
+    protected ?string $name = null;
 
     /**
      * @var string|null
      */
-    protected $namespace;
+    protected ?string $namespace = null;
 
     /**
      * @var string|null
      */
-    protected $prefix;
+    protected ?string $prefix = null;
 
     /**
      * @var bool|null
      */
-    protected $attribute;
+    protected ?bool $attribute = null;
 
     /**
      * @var bool|null
      */
-    protected $wrapped;
+    protected ?bool $wrapped = null;
 
     /**
      * @param string|null $name
      * @return static
      */
-    public function name(?string $name): self
+    public function name(?string $name): static
     {
         $instance = clone $this;
 
@@ -57,7 +57,7 @@ class Xml extends BaseObject
      * @param string|null $namespace
      * @return static
      */
-    public function namespace(?string $namespace): self
+    public function namespace(?string $namespace): static
     {
         $instance = clone $this;
 
@@ -70,7 +70,7 @@ class Xml extends BaseObject
      * @param string|null $prefix
      * @return static
      */
-    public function prefix(?string $prefix): self
+    public function prefix(?string $prefix): static
     {
         $instance = clone $this;
 
@@ -83,7 +83,7 @@ class Xml extends BaseObject
      * @param bool|null $attribute
      * @return static
      */
-    public function attribute(?bool $attribute = true): self
+    public function attribute(?bool $attribute = true): static
     {
         $instance = clone $this;
 
@@ -96,7 +96,7 @@ class Xml extends BaseObject
      * @param bool|null $wrapped
      * @return static
      */
-    public function wrapped(?bool $wrapped = true): self
+    public function wrapped(?bool $wrapped = true): static
     {
         $instance = clone $this;
 

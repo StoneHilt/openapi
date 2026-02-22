@@ -8,20 +8,20 @@ use StoneHilt\OpenApi\Contracts\SchemaContract;
 use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
- * @property \StoneHilt\OpenApi\Objects\Schema|null $schema
+ * @property Schema|null $schema
  */
 class Not extends BaseObject implements SchemaContract
 {
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema|null
+     * @var Schema|null
      */
-    protected $schema;
+    protected ?Schema $schema = null;
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Schema|null $schema
+     * @param Schema|null $schema
      * @return static
      */
-    public function schema(?Schema $schema): self
+    public function schema(?Schema $schema): static
     {
         $instance = clone $this;
 

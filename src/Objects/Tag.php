@@ -9,30 +9,30 @@ use StoneHilt\OpenApi\Utilities\Arr;
 /**
  * @property string|null $name
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+ * @property ExternalDocs|null $externalDocs
  */
 class Tag extends BaseObject
 {
     /**
      * @var string|null
      */
-    protected $name;
+    protected ?string $name = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\ExternalDocs|null
+     * @var ExternalDocs|null
      */
-    protected $externalDocs;
+    protected ?ExternalDocs $externalDocs = null;
 
     /**
      * @param string|null $name
      * @return static
      */
-    public function name(?string $name): self
+    public function name(?string $name): static
     {
         $instance = clone $this;
 
@@ -45,7 +45,7 @@ class Tag extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -55,10 +55,10 @@ class Tag extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+     * @param ExternalDocs|null $externalDocs
      * @return static
      */
-    public function externalDocs(?ExternalDocs $externalDocs): self
+    public function externalDocs(?ExternalDocs $externalDocs): static
     {
         $instance = clone $this;
 

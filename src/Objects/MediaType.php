@@ -9,10 +9,10 @@ use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
  * @property string|null $mediaType
- * @property \StoneHilt\OpenApi\Objects\Schema|null $schema
- * @property \StoneHilt\OpenApi\Objects\Example|null $example
- * @property \StoneHilt\OpenApi\Objects\Example[]|null $examples
- * @property \StoneHilt\OpenApi\Objects\Encoding[]|null $encoding
+ * @property Schema|null $schema
+ * @property Example|null $example
+ * @property Example[]|null $examples
+ * @property Encoding[]|null $encoding
  */
 class MediaType extends BaseObject
 {
@@ -28,33 +28,33 @@ class MediaType extends BaseObject
     /**
      * @var string|null
      */
-    protected $mediaType;
+    protected ?string $mediaType = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema|null
+     * @var Schema|null
      */
-    protected $schema;
+    protected ?Schema $schema = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Example|null
+     * @var Example|null
      */
-    protected $example;
+    protected ?Example $example = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Example[]|null
+     * @var Example[]|null
      */
-    protected $examples;
+    protected ?array $examples = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Encoding[]|null
+     * @var Encoding[]|null
      */
-    protected $encoding;
+    protected ?array $encoding = null;
 
     /**
      * @param string|null $objectId
      * @return static
      */
-    public static function json(string $objectId = null): self
+    public static function json(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_APPLICATION_JSON);
@@ -64,7 +64,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function pdf(string $objectId = null): self
+    public static function pdf(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_APPLICATION_PDF);
@@ -74,7 +74,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function jpeg(string $objectId = null): self
+    public static function jpeg(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_IMAGE_JPEG);
@@ -84,7 +84,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function png(string $objectId = null): self
+    public static function png(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_IMAGE_PNG);
@@ -94,7 +94,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function calendar(string $objectId = null): self
+    public static function calendar(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_TEXT_CALENDAR);
@@ -104,7 +104,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function plainText(string $objectId = null): self
+    public static function plainText(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_TEXT_PLAIN);
@@ -114,7 +114,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function xml(string $objectId = null): self
+    public static function xml(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_TEXT_XML);
@@ -124,7 +124,7 @@ class MediaType extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function formUrlEncoded(string $objectId = null): self
+    public static function formUrlEncoded(?string $objectId = null): static
     {
         return static::create($objectId)
             ->mediaType(static::MEDIA_TYPE_APPLICATION_X_WWW_FORM_URLENCODED);
@@ -134,7 +134,7 @@ class MediaType extends BaseObject
      * @param string|null $mediaType
      * @return static
      */
-    public function mediaType(?string $mediaType): self
+    public function mediaType(?string $mediaType): static
     {
         $instance = clone $this;
 
@@ -147,7 +147,7 @@ class MediaType extends BaseObject
      * @param \StoneHilt\OpenApi\Contracts\SchemaContract|null $schema
      * @return static
      */
-    public function schema(?SchemaContract $schema): self
+    public function schema(?SchemaContract $schema): static
     {
         $instance = clone $this;
 
@@ -157,10 +157,10 @@ class MediaType extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Example|null $example
+     * @param Example|null $example
      * @return static
      */
-    public function example(?Example $example): self
+    public function example(?Example $example): static
     {
         $instance = clone $this;
 
@@ -170,10 +170,10 @@ class MediaType extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Example[]|null $examples
+     * @param Example[]|null $examples
      * @return static
      */
-    public function examples(Example ...$examples): self
+    public function examples(Example ...$examples): static
     {
         $instance = clone $this;
 
@@ -183,10 +183,10 @@ class MediaType extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Encoding[] $encoding
+     * @param Encoding[] $encoding
      * @return static
      */
-    public function encoding(Encoding ...$encoding): self
+    public function encoding(Encoding ...$encoding): static
     {
         $instance = clone $this;
 

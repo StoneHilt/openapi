@@ -16,19 +16,19 @@ class SecurityRequirement extends BaseObject
     /**
      * @var string|null
      */
-    protected $securityScheme;
+    protected ?string $securityScheme = null;
 
     /**
      * @var string[]|null
      */
-    protected $scopes;
+    protected ?array $scopes = null;
 
     /**
      * @param \StoneHilt\OpenApi\Objects\SecurityScheme|string|null $securityScheme
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function securityScheme($securityScheme): self
+    public function securityScheme($securityScheme): static
     {
         // If a SecurityScheme instance passed in, then use its Object ID.
         if ($securityScheme instanceof SecurityScheme) {
@@ -56,7 +56,7 @@ class SecurityRequirement extends BaseObject
      * @param string[] $scopes
      * @return static
      */
-    public function scopes(string ...$scopes): self
+    public function scopes(string ...$scopes): static
     {
         $instance = clone $this;
 

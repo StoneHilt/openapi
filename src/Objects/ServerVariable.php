@@ -16,23 +16,23 @@ class ServerVariable extends BaseObject
     /**
      * @var string[]|null
      */
-    protected $enum;
+    protected ?array $enum = null;
 
     /**
      * @var string|null
      */
-    protected $default;
+    protected ?string $default = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @param string[] $enum
      * @return static
      */
-    public function enum(string ...$enum): self
+    public function enum(string ...$enum): static
     {
         $instance = clone $this;
 
@@ -45,7 +45,7 @@ class ServerVariable extends BaseObject
      * @param string|null $default
      * @return static
      */
-    public function default(?string $default): self
+    public function default(?string $default): static
     {
         $instance = clone $this;
 
@@ -58,7 +58,7 @@ class ServerVariable extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 

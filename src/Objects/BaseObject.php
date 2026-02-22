@@ -18,24 +18,24 @@ abstract class BaseObject implements JsonSerializable
     /**
      * @var string|null
      */
-    protected $objectId;
+    protected ?string $objectId = null;
 
     /**
      * @var string|null
      */
-    protected $ref;
+    protected ?string $ref = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Utilities\Extensions
+     * @var Extensions
      */
-    protected $extensions;
+    protected ?Extensions $extensions = null;
 
     /**
      * BaseObject constructor.
      *
      * @param string|null $objectId
      */
-    public function __construct(string $objectId = null)
+    public function __construct(?string $objectId = null)
     {
         $this->objectId = $objectId;
         $this->extensions = new Extensions();
@@ -45,7 +45,7 @@ abstract class BaseObject implements JsonSerializable
      * @param string|null $objectId
      * @return static
      */
-    public static function create(string $objectId = null): self
+    public static function create(?string $objectId = null): static
     {
         return new static($objectId);
     }
@@ -55,7 +55,7 @@ abstract class BaseObject implements JsonSerializable
      * @param string|null $objectId
      * @return static
      */
-    public static function ref(string $ref, string $objectId = null): self
+    public static function ref(string $ref, ?string $objectId = null): static
     {
         $instance = new static($objectId);
 
@@ -68,7 +68,7 @@ abstract class BaseObject implements JsonSerializable
      * @param string|null $objectId
      * @return static
      */
-    public function objectId(?string $objectId): self
+    public function objectId(?string $objectId): static
     {
         $instance = clone $this;
 
@@ -79,10 +79,10 @@ abstract class BaseObject implements JsonSerializable
 
     /**
      * @param string $key
-     * @param mixed $value
+     * @param string $value
      * @return $this
      */
-    public function x(string $key, $value = Extensions::X_EMPTY_VALUE): self
+    public function x(string $key, string $value = Extensions::X_EMPTY_VALUE): static
     {
         $instance = clone $this;
 

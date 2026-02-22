@@ -10,8 +10,8 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string|null $title
  * @property string|null $description
  * @property string|null $termsOfService
- * @property \StoneHilt\OpenApi\Objects\Contact|null $contact
- * @property \StoneHilt\OpenApi\Objects\License|null $license
+ * @property Contact|null $contact
+ * @property License|null $license
  * @property string|null $version
  */
 class Info extends BaseObject
@@ -19,38 +19,38 @@ class Info extends BaseObject
     /**
      * @var string|null
      */
-    protected $title;
+    protected ?string $title = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @var string|null
      */
-    protected $termsOfService;
+    protected ?string $termsOfService = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Contact|null
+     * @var Contact|null
      */
-    protected $contact;
+    protected ?Contact $contact = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\License|null
+     * @var License|null
      */
-    protected $license;
+    protected ?License $license = null;
 
     /**
      * @var string|null
      */
-    protected $version;
+    protected ?string $version = null;
 
     /**
      * @param string|null $title
      * @return static
      */
-    public function title(?string $title): self
+    public function title(?string $title): static
     {
         $instance = clone $this;
 
@@ -63,7 +63,7 @@ class Info extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -76,7 +76,7 @@ class Info extends BaseObject
      * @param string|null $termsOfService
      * @return static
      */
-    public function termsOfService(?string $termsOfService): self
+    public function termsOfService(?string $termsOfService): static
     {
         $instance = clone $this;
 
@@ -86,10 +86,10 @@ class Info extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Contact|null $contact
+     * @param Contact|null $contact
      * @return static
      */
-    public function contact(?Contact $contact): self
+    public function contact(?Contact $contact): static
     {
         $instance = clone $this;
 
@@ -99,10 +99,10 @@ class Info extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\License|null $license
+     * @param License|null $license
      * @return static
      */
-    public function license(?License $license): self
+    public function license(?License $license): static
     {
         $instance = clone $this;
 
@@ -115,7 +115,7 @@ class Info extends BaseObject
      * @param string|null $version
      * @return static
      */
-    public function version(?string $version): self
+    public function version(?string $version): static
     {
         $instance = clone $this;
 

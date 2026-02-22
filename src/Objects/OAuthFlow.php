@@ -24,33 +24,33 @@ class OAuthFlow extends BaseObject
     /**
      * @var string|null
      */
-    protected $flow;
+    protected ?string $flow = null;
 
     /**
      * @var string|null
      */
-    protected $authorizationUrl;
+    protected ?string $authorizationUrl = null;
 
     /**
      * @var string|null
      */
-    protected $tokenUrl;
+    protected ?string $tokenUrl = null;
 
     /**
      * @var string|null
      */
-    protected $refreshUrl;
+    protected ?string $refreshUrl = null;
 
     /**
      * @var array|null
      */
-    protected $scopes;
+    protected ?array $scopes = null;
 
     /**
      * @param string|null $flow
      * @return static
      */
-    public function flow(?string $flow): self
+    public function flow(?string $flow): static
     {
         $instance = clone $this;
 
@@ -63,7 +63,7 @@ class OAuthFlow extends BaseObject
      * @param string|null $authorizationUrl
      * @return static
      */
-    public function authorizationUrl(?string $authorizationUrl): self
+    public function authorizationUrl(?string $authorizationUrl): static
     {
         $instance = clone $this;
 
@@ -76,7 +76,7 @@ class OAuthFlow extends BaseObject
      * @param string|null $tokenUrl
      * @return static
      */
-    public function tokenUrl(?string $tokenUrl): self
+    public function tokenUrl(?string $tokenUrl): static
     {
         $instance = clone $this;
 
@@ -89,7 +89,7 @@ class OAuthFlow extends BaseObject
      * @param string|null $refreshUrl
      * @return static
      */
-    public function refreshUrl(?string $refreshUrl): self
+    public function refreshUrl(?string $refreshUrl): static
     {
         $instance = clone $this;
 
@@ -103,7 +103,7 @@ class OAuthFlow extends BaseObject
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function scopes(?array $scopes): self
+    public function scopes(?array $scopes): static
     {
         // Ensure the scopes are string => string.
         foreach ($scopes as $key => $value) {

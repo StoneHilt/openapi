@@ -10,35 +10,35 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string|null $operationRef
  * @property string|null $operationId
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\Server|null $server
+ * @property Server|null $server
  */
 class Link extends BaseObject
 {
     /**
      * @var string|null
      */
-    protected $operationRef;
+    protected ?string $operationRef = null;
 
     /**
      * @var string|null
      */
-    protected $operationId;
+    protected ?string $operationId = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Server|null
+     * @var Server|null
      */
-    protected $server;
+    protected ?Server $server = null;
 
     /**
      * @param string|null $operationRef
      * @return static
      */
-    public function operationRef(?string $operationRef): self
+    public function operationRef(?string $operationRef): static
     {
         $instance = clone $this;
 
@@ -51,7 +51,7 @@ class Link extends BaseObject
      * @param string|null $operationId
      * @return static
      */
-    public function operationId(?string $operationId): self
+    public function operationId(?string $operationId): static
     {
         $instance = clone $this;
 
@@ -64,7 +64,7 @@ class Link extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -74,10 +74,10 @@ class Link extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Server|null $server
+     * @param Server|null $server
      * @return static
      */
-    public function server(?Server $server): self
+    public function server(?Server $server): static
     {
         $instance = clone $this;
 

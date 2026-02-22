@@ -8,7 +8,7 @@ use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\MediaType[]|null $content
+ * @property MediaType[]|null $content
  * @property bool|null $required
  */
 class RequestBody extends BaseObject
@@ -16,23 +16,23 @@ class RequestBody extends BaseObject
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\MediaType[]|null
+     * @var MediaType[]|null
      */
-    protected $content;
+    protected ?array $content = null;
 
     /**
      * @var bool|null
      */
-    protected $required;
+    protected ?bool $required = null;
 
     /**
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -42,10 +42,10 @@ class RequestBody extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\MediaType[] $content
+     * @param MediaType[] $content
      * @return static
      */
-    public function content(MediaType ...$content): self
+    public function content(MediaType ...$content): static
     {
         $instance = clone $this;
 
@@ -58,7 +58,7 @@ class RequestBody extends BaseObject
      * @param bool|null $required
      * @return static
      */
-    public function required(?bool $required = true): self
+    public function required(?bool $required = true): static
     {
         $instance = clone $this;
 

@@ -13,7 +13,7 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string|null $in
  * @property string|null $scheme
  * @property string|null $bearerFormat
- * @property \StoneHilt\OpenApi\Objects\OAuthFlow[]|null $flows
+ * @property OAuthFlow[]|null $flows
  * @property string|null $openIdConnectUrl
  */
 class SecurityScheme extends BaseObject
@@ -30,48 +30,48 @@ class SecurityScheme extends BaseObject
     /**
      * @var string|null
      */
-    protected $type;
+    protected ?string $type = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @var string|null
      */
-    protected $name;
+    protected ?string $name = null;
 
     /**
      * @var string|null
      */
-    protected $in;
+    protected ?string $in = null;
 
     /**
      * @var string|null
      */
-    protected $scheme;
+    protected ?string $scheme = null;
 
     /**
      * @var string|null
      */
-    protected $bearerFormat;
+    protected ?string $bearerFormat = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\OAuthFlow[]|null
+     * @var OAuthFlow[]|null
      */
-    protected $flows;
+    protected ?array $flows = null;
 
     /**
      * @var string|null
      */
-    protected $openIdConnectUrl;
+    protected ?string $openIdConnectUrl = null;
 
     /**
      * @param string|null $objectId
      * @return static
      */
-    public static function oauth2(string $objectId = null): self
+    public static function oauth2(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_OAUTH2);
     }
@@ -80,7 +80,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $type
      * @return static
      */
-    public function type(?string $type): self
+    public function type(?string $type): static
     {
         $instance = clone $this;
 
@@ -93,7 +93,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -106,7 +106,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $name
      * @return static
      */
-    public function name(?string $name): self
+    public function name(?string $name): static
     {
         $instance = clone $this;
 
@@ -119,7 +119,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $in
      * @return static
      */
-    public function in(?string $in): self
+    public function in(?string $in): static
     {
         $instance = clone $this;
 
@@ -132,7 +132,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $scheme
      * @return static
      */
-    public function scheme(?string $scheme): self
+    public function scheme(?string $scheme): static
     {
         $instance = clone $this;
 
@@ -145,7 +145,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $bearerFormat
      * @return static
      */
-    public function bearerFormat(?string $bearerFormat): self
+    public function bearerFormat(?string $bearerFormat): static
     {
         $instance = clone $this;
 
@@ -155,10 +155,10 @@ class SecurityScheme extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\OAuthFlow[] $flows
+     * @param OAuthFlow[] $flows
      * @return static
      */
-    public function flows(OAuthFlow ...$flows): self
+    public function flows(OAuthFlow ...$flows): static
     {
         $instance = clone $this;
 
@@ -171,7 +171,7 @@ class SecurityScheme extends BaseObject
      * @param string|null $openIdConnectUrl
      * @return static
      */
-    public function openIdConnectUrl(?string $openIdConnectUrl): self
+    public function openIdConnectUrl(?string $openIdConnectUrl): static
     {
         $instance = clone $this;
 

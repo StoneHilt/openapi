@@ -19,10 +19,10 @@ use JsonSchema\Validator;
 
 /**
  * @property string|null $openapi
- * @property \StoneHilt\OpenApi\Objects\Info|null $info
- * @property \StoneHilt\OpenApi\Objects\Server[]|null $servers
- * @property \StoneHilt\OpenApi\Objects\PathItem[]|null $paths
- * @property \StoneHilt\OpenApi\Objects\Components|null $components
+ * @property Info|null $info
+ * @property Server[]|null $servers
+ * @property PathItem[]|null $paths
+ * @property Components|null $components
  * @property \StoneHilt\OpenApi\Objects\SecurityRequirement[]|null $security
  * @property \StoneHilt\OpenApi\Objects\Tag[]|null $tags
  * @property \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
@@ -39,22 +39,22 @@ class OpenApi extends BaseObject
     protected $openapi;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Info|null
+     * @var Info|null
      */
     protected $info;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Server[]|null
+     * @var Server[]|null
      */
     protected $servers;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\PathItem[]|null
+     * @var PathItem[]|null
      */
     protected $paths;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Components|null
+     * @var Components|null
      */
     protected $components;
 
@@ -87,7 +87,7 @@ class OpenApi extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Info|null $info
+     * @param Info|null $info
      * @return static
      */
     public function info(?Info $info): self
@@ -100,7 +100,7 @@ class OpenApi extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Server[] $servers
+     * @param Server[] $servers
      * @return static
      */
     public function servers(Server ...$servers): self
@@ -113,7 +113,7 @@ class OpenApi extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\PathItem[] $paths
+     * @param PathItem[] $paths
      * @return static
      */
     public function paths(PathItem ...$paths): self
@@ -126,7 +126,7 @@ class OpenApi extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Components|null $components
+     * @param Components|null $components
      * @return static
      */
     public function components(?Components $components): self

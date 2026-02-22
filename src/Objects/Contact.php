@@ -16,23 +16,23 @@ class Contact extends BaseObject
     /**
      * @var string|null
      */
-    protected $name;
+    protected ?string $name = null;
 
     /**
      * @var string|null
      */
-    protected $url;
+    protected ?string $url = null;
 
     /**
      * @var string|null
      */
-    protected $email;
+    protected ?string $email = null;
 
     /**
      * @param string|null $name
      * @return static
      */
-    public function name(?string $name): self
+    public function name(?string $name): static
     {
         $instance = clone $this;
 
@@ -45,7 +45,7 @@ class Contact extends BaseObject
      * @param string|null $url
      * @return static
      */
-    public function url(?string $url): self
+    public function url(?string $url): static
     {
         $instance = clone $this;
 
@@ -58,7 +58,7 @@ class Contact extends BaseObject
      * @param string|null $email
      * @return static
      */
-    public function email(?string $email): self
+    public function email(?string $email): static
     {
         $instance = clone $this;
 

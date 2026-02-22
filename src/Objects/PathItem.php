@@ -24,27 +24,27 @@ class PathItem extends BaseObject
     /**
      * @var string|null
      */
-    protected $summary;
+    protected ?string $summary = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Operation[]|null
+     * @var Operation[]|null
      */
-    protected $operations;
+    protected ?array $operations = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Server[]|null
+     * @var Server[]|null
      */
-    protected $servers;
+    protected ?array $servers = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Parameter[]|null
+     * @var Parameter[]|null
      */
-    protected $parameters;
+    protected ?array $parameters = null;
 
     /**
      * @param string|null $route
@@ -63,7 +63,7 @@ class PathItem extends BaseObject
      * @param string|null $summary
      * @return static
      */
-    public function summary(?string $summary): self
+    public function summary(?string $summary): static
     {
         $instance = clone $this;
 
@@ -76,7 +76,7 @@ class PathItem extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -86,10 +86,10 @@ class PathItem extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Operation[] $operations
+     * @param Operation[] $operations
      * @return static
      */
-    public function operations(Operation ...$operations): self
+    public function operations(Operation ...$operations): static
     {
         $instance = clone $this;
 
@@ -99,10 +99,10 @@ class PathItem extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Server[] $servers
+     * @param Server[] $servers
      * @return static
      */
-    public function servers(Server ...$servers): self
+    public function servers(Server ...$servers): static
     {
         $instance = clone $this;
 
@@ -112,10 +112,10 @@ class PathItem extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Parameter[] $parameters
+     * @param Parameter[] $parameters
      * @return static
      */
-    public function parameters(Parameter ...$parameters): self
+    public function parameters(Parameter ...$parameters): static
     {
         $instance = clone $this;
 

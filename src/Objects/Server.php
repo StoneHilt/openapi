@@ -9,30 +9,30 @@ use StoneHilt\OpenApi\Utilities\Arr;
 /**
  * @property string|null $url
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\ServerVariable[]|null $variables
+ * @property ServerVariable[]|null $variables
  */
 class Server extends BaseObject
 {
     /**
      * @var string|null
      */
-    protected $url;
+    protected ?string $url = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\ServerVariable[]|null
+     * @var ServerVariable[]|null
      */
-    protected $variables;
+    protected ?array $variables = null;
 
     /**
      * @param string|null $url
      * @return static
      */
-    public function url(?string $url): self
+    public function url(?string $url): static
     {
         $instance = clone $this;
 
@@ -45,7 +45,7 @@ class Server extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -55,10 +55,10 @@ class Server extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\ServerVariable[] $variables
+     * @param ServerVariable[] $variables
      * @return static
      */
-    public function variables(ServerVariable ...$variables): self
+    public function variables(ServerVariable ...$variables): static
     {
         $instance = clone $this;
 

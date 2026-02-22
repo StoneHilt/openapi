@@ -12,15 +12,15 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string[]|null $tags
  * @property string|null $summary
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+ * @property ExternalDocs|null $externalDocs
  * @property string|null $operationId
- * @property \StoneHilt\OpenApi\Objects\Parameter[]|null $parameters
- * @property \StoneHilt\OpenApi\Objects\RequestBody|null $requestBody
- * @property \StoneHilt\OpenApi\Objects\Response[]|null $responses
+ * @property Parameter[]|null $parameters
+ * @property RequestBody|null $requestBody
+ * @property Response[]|null $responses
  * @property bool|null $deprecated
- * @property \StoneHilt\OpenApi\Objects\SecurityRequirement[]|null $security
+ * @property SecurityRequirement[]|null $security
  * @property bool|null $noSecurity
- * @property \StoneHilt\OpenApi\Objects\Server[]|null $servers
+ * @property Server[]|null $servers
  */
 class Operation extends BaseObject
 {
@@ -36,78 +36,78 @@ class Operation extends BaseObject
     /**
      * @var string|null
      */
-    protected $action;
+    protected ?string $action = null;
 
     /**
      * @var string[]|null
      */
-    protected $tags;
+    protected ?array $tags = null;
 
     /**
      * @var string|null
      */
-    protected $summary;
+    protected ?string $summary = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\ExternalDocs|null
+     * @var ExternalDocs|null
      */
-    protected $externalDocs;
+    protected ?array $externalDocs = null;
 
     /**
      * @var string|null
      */
-    protected $operationId;
+    protected ?string $operationId = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Parameter[]|null
+     * @var Parameter[]|null
      */
-    protected $parameters;
+    protected ?array $parameters = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\RequestBody|null
+     * @var RequestBody|null
      */
-    protected $requestBody;
+    protected ?bool $requestBody = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Response[]|null
+     * @var Response[]|null
      */
-    protected $responses;
+    protected ?array $responses = null;
 
     /**
      * @var bool|null
      */
-    protected $deprecated;
+    protected ?bool $deprecated = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\SecurityRequirement[]|null
+     * @var SecurityRequirement[]|null
      */
-    protected $security;
+    protected ?array $security = null;
 
     /**
      * @var bool|null
      */
-    protected $noSecurity;
+    protected ?bool $noSecurity = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Server[]|null
+     * @var Server[]|null
      */
-    protected $servers;
+    protected ?array $servers = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\PathItem[]|null
+     * @var PathItem[]|null
      */
-    protected $callbacks;
+    protected ?array $callbacks = null;
 
     /**
      * @param string|null $objectId
      * @return static
      */
-    public static function get(string $objectId = null): self
+    public static function get(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_GET);
     }
@@ -116,7 +116,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function put(string $objectId = null): self
+    public static function put(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_PUT);
     }
@@ -125,7 +125,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function post(string $objectId = null): self
+    public static function post(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_POST);
     }
@@ -134,7 +134,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function delete(string $objectId = null): self
+    public static function delete(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_DELETE);
     }
@@ -143,7 +143,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function head(string $objectId = null): self
+    public static function head(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_HEAD);
     }
@@ -152,7 +152,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function patch(string $objectId = null): self
+    public static function patch(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_PATCH);
     }
@@ -161,7 +161,7 @@ class Operation extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function trace(string $objectId = null): self
+    public static function trace(?string $objectId = null): static
     {
         return static::create($objectId)->action(static::ACTION_TRACE);
     }
@@ -170,7 +170,7 @@ class Operation extends BaseObject
      * @param string|null $action
      * @return static
      */
-    public function action(?string $action): self
+    public function action(?string $action): static
     {
         $instance = clone $this;
 
@@ -180,11 +180,11 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Tag[]|string[] $tags
-     * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
+     * @param Tag[]|string[] $tags
+     * @throws InvalidArgumentException
      * @return static
      */
-    public function tags(...$tags): self
+    public function tags(...$tags): static
     {
         // Only allow Tag instances and strings.
         foreach ($tags as &$tag) {
@@ -217,7 +217,7 @@ class Operation extends BaseObject
      * @param string|null $summary
      * @return static
      */
-    public function summary(?string $summary): self
+    public function summary(?string $summary): static
     {
         $instance = clone $this;
 
@@ -230,7 +230,7 @@ class Operation extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -240,10 +240,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+     * @param ExternalDocs|null $externalDocs
      * @return static
      */
-    public function externalDocs(?ExternalDocs $externalDocs): self
+    public function externalDocs(?ExternalDocs $externalDocs): static
     {
         $instance = clone $this;
 
@@ -256,7 +256,7 @@ class Operation extends BaseObject
      * @param string|null $operationId
      * @return static
      */
-    public function operationId(?string $operationId): self
+    public function operationId(?string $operationId): static
     {
         $instance = clone $this;
 
@@ -266,10 +266,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Parameter[] $parameters
+     * @param Parameter[] $parameters
      * @return static
      */
-    public function parameters(Parameter ...$parameters): self
+    public function parameters(Parameter ...$parameters): static
     {
         $instance = clone $this;
 
@@ -279,10 +279,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\RequestBody|null $requestBody
+     * @param RequestBody|null $requestBody
      * @return static
      */
-    public function requestBody(?RequestBody $requestBody): self
+    public function requestBody(?RequestBody $requestBody): static
     {
         $instance = clone $this;
 
@@ -292,10 +292,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Response[] $responses
+     * @param Response[] $responses
      * @return static
      */
-    public function responses(Response ...$responses): self
+    public function responses(Response ...$responses): static
     {
         $instance = clone $this;
 
@@ -308,7 +308,7 @@ class Operation extends BaseObject
      * @param bool|null $deprecated
      * @return static
      */
-    public function deprecated(?bool $deprecated = true): self
+    public function deprecated(?bool $deprecated = true): static
     {
         $instance = clone $this;
 
@@ -318,10 +318,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\SecurityRequirement[]|null $security
+     * @param SecurityRequirement[]|null $security
      * @return static
      */
-    public function security(SecurityRequirement ...$security): self
+    public function security(SecurityRequirement ...$security): static
     {
         $instance = clone $this;
 
@@ -335,7 +335,7 @@ class Operation extends BaseObject
      * @param bool|null $noSecurity
      * @return static
      */
-    public function noSecurity(?bool $noSecurity = true): self
+    public function noSecurity(?bool $noSecurity = true): static
     {
         $instance = clone $this;
 
@@ -345,10 +345,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Server[] $servers
+     * @param Server[] $servers
      * @return static
      */
-    public function servers(Server ...$servers): self
+    public function servers(Server ...$servers): static
     {
         $instance = clone $this;
 
@@ -358,10 +358,10 @@ class Operation extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\PathItem[] $callbacks
+     * @param PathItem[] $callbacks
      * @return $this
      */
-    public function callbacks(PathItem ...$callbacks): self
+    public function callbacks(PathItem ...$callbacks): static
     {
         $instance = clone $this;
 

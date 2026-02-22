@@ -9,42 +9,42 @@ use StoneHilt\OpenApi\Utilities\Arr;
 /**
  * @property int|null $statusCode
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\Header[]|null $headers
- * @property \StoneHilt\OpenApi\Objects\MediaType[]|null $content
- * @property \StoneHilt\OpenApi\Objects\Link[]|null $links
+ * @property Header[]|null $headers
+ * @property MediaType[]|null $content
+ * @property Link[]|null $links
  */
 class Response extends BaseObject
 {
     /**
      * @var int|null
      */
-    protected $statusCode;
+    protected ?int $statusCode = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Header[]|null
+     * @var Header[]|null
      */
-    protected $headers;
+    protected ?array $headers = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\MediaType[]|null
+     * @var MediaType[]|null
      */
-    protected $content;
+    protected ?array $content = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Link[]|null
+     * @var Link[]|null
      */
-    protected $links;
+    protected ?array $links = null;
 
     /**
      * @param string|null $objectId
      * @return static
      */
-    public static function ok(string $objectId = null): self
+    public static function ok(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(200)
@@ -55,7 +55,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function created(string $objectId = null): self
+    public static function created(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(201)
@@ -66,7 +66,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function movedPermanently(string $objectId = null): self
+    public static function movedPermanently(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(301)
@@ -77,7 +77,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function movedTemporarily(string $objectId = null): self
+    public static function movedTemporarily(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(302)
@@ -88,7 +88,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function badRequest(string $objectId = null): self
+    public static function badRequest(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(400)
@@ -99,7 +99,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function unauthorized(string $objectId = null): self
+    public static function unauthorized(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(401)
@@ -110,7 +110,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function forbidden(string $objectId = null): self
+    public static function forbidden(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(403)
@@ -121,7 +121,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function notFound(string $objectId = null): self
+    public static function notFound(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(404)
@@ -132,7 +132,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function unprocessableEntity(string $objectId = null): self
+    public static function unprocessableEntity(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(422)
@@ -143,7 +143,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function tooManyRequests(string $objectId = null): self
+    public static function tooManyRequests(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(429)
@@ -154,7 +154,7 @@ class Response extends BaseObject
      * @param string|null $objectId
      * @return static
      */
-    public static function internalServerError(string $objectId = null): self
+    public static function internalServerError(string $objectId = null): static
     {
         return static::create($objectId)
             ->statusCode(500)
@@ -165,7 +165,7 @@ class Response extends BaseObject
      * @param int|null $statusCode
      * @return static
      */
-    public function statusCode(?int $statusCode): self
+    public function statusCode(?int $statusCode): static
     {
         $instance = clone $this;
 
@@ -178,7 +178,7 @@ class Response extends BaseObject
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -188,10 +188,10 @@ class Response extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Header[] $headers
+     * @param Header[] $headers
      * @return static
      */
-    public function headers(Header ...$headers): self
+    public function headers(Header ...$headers): static
     {
         $instance = clone $this;
 
@@ -201,10 +201,10 @@ class Response extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\MediaType[] $content
+     * @param MediaType[] $content
      * @return static
      */
-    public function content(MediaType ...$content): self
+    public function content(MediaType ...$content): static
     {
         $instance = clone $this;
 
@@ -214,10 +214,10 @@ class Response extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Link[] $links
+     * @param Link[] $links
      * @return static
      */
-    public function links(Link ...$links): self
+    public function links(Link ...$links): static
     {
         $instance = clone $this;
 

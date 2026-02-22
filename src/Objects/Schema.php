@@ -15,7 +15,7 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property mixed|null $default
  * @property string|null $format
  * @property string|null $type
- * @property \StoneHilt\OpenApi\Objects\Schema[]|null $items
+ * @property Schema[]|null $items
  * @property int|null $maxItems
  * @property int|null $minItems
  * @property bool|null $uniqueItems
@@ -28,16 +28,16 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property int|float|null $exclusiveMinimum
  * @property int|float|null $multipleOf
  * @property string[]|null $required
- * @property \StoneHilt\OpenApi\Contracts\SchemaContract[]|null $properties
- * @property \StoneHilt\OpenApi\Objects\Schema|null $additionalProperties
+ * @property SchemaContract[]|null $properties
+ * @property Schema|null $additionalProperties
  * @property int|null $maxProperties
  * @property int|null $minProperties
  * @property bool|null $nullable
- * @property \StoneHilt\OpenApi\Objects\Discriminator|null $discriminator
+ * @property Discriminator|null $discriminator
  * @property bool|null $readOnly
  * @property bool|null $writeOnly
- * @property \StoneHilt\OpenApi\Objects\Xml|null $xml
- * @property \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+ * @property Xml|null $xml
+ * @property ExternalDocs|null $externalDocs
  * @property mixed|null $example
  * @property bool|null $deprecated
  */
@@ -64,163 +64,163 @@ class Schema extends BaseObject implements SchemaContract
     /**
      * @var string|null
      */
-    protected $title;
+    protected ?string $title = null;
 
     /**
      * @var string|null
      */
-    protected $description;
+    protected ?string $description = null;
 
     /**
      * @var mixed[]|null
      */
-    protected $enum;
+    protected ?array $enum = null;
 
     /**
      * @var mixed|null
      */
-    protected $default;
+    protected mixed $default = null;
 
     /**
      * @var string|null
      */
-    protected $format;
+    protected ?string $format = null;
 
     /**
      * @var string|null
      */
-    protected $type;
+    protected ?string $type = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema|null
+     * @var SchemaContract|null
      */
-    protected $items;
-
-    /**
-     * @var int|null
-     */
-    protected $maxItems;
+    protected ?SchemaContract $items = null;
 
     /**
      * @var int|null
      */
-    protected $minItems;
+    protected ?int $maxItems = null;
+
+    /**
+     * @var int|null
+     */
+    protected ?int $minItems = null;
 
     /**
      * @var bool|null
      */
-    protected $uniqueItems;
+    protected ?bool $uniqueItems = null;
 
     /**
      * @var string|null
      */
-    protected $pattern;
+    protected ?string $pattern = null;
 
     /**
      * @var int|null
      */
-    protected $maxLength;
+    protected ?int $maxLength = null;
 
     /**
      * @var int|null
      */
-    protected $minLength;
+    protected ?int $minLength = null;
 
     /**
      * @var int|null
      */
-    protected $maximum;
+    protected ?int $maximum = null;
 
     /**
      * @var int|null
      */
-    protected $exclusiveMaximum;
+    protected ?int $exclusiveMaximum = null;
 
     /**
      * @var int|null
      */
-    protected $minimum;
+    protected ?int $minimum = null;
 
     /**
      * @var int|null
      */
-    protected $exclusiveMinimum;
+    protected ?int $exclusiveMinimum = null;
 
     /**
      * @var int|null
      */
-    protected $multipleOf;
+    protected ?int $multipleOf = null;
 
     /**
      * @var string[]|null
      */
-    protected $required;
+    protected ?array $required = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Contracts\SchemaContract[]|null
+     * @var SchemaContract[]|null
      */
-    protected $properties;
+    protected ?array $properties = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema|null
+     * @var Schema|null
      */
-    protected $additionalProperties;
-
-    /**
-     * @var int|null
-     */
-    protected $maxProperties;
+    protected ?SchemaContract $additionalProperties = null;
 
     /**
      * @var int|null
      */
-    protected $minProperties;
+    protected ?int $maxProperties = null;
+
+    /**
+     * @var int|null
+     */
+    protected ?int $minProperties = null;
 
     /**
      * @var bool|null
      */
-    protected $nullable;
+    protected ?bool $nullable = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Discriminator|null
+     * @var Discriminator|null
      */
-    protected $discriminator;
-
-    /**
-     * @var bool|null
-     */
-    protected $readOnly;
+    protected ?Discriminator $discriminator = null;
 
     /**
      * @var bool|null
      */
-    protected $writeOnly;
+    protected ?bool $readOnly = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Xml|null
+     * @var bool|null
      */
-    protected $xml;
+    protected ?bool $writeOnly = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\ExternalDocs|null
+     * @var Xml|null
      */
-    protected $externalDocs;
+    protected ?Xml $xml = null;
+
+    /**
+     * @var ExternalDocs|null
+     */
+    protected ?ExternalDocs $externalDocs = null;
 
     /**
      * @var mixed|null
      */
-    protected $example;
+    protected mixed $example = null;
 
     /**
      * @var bool|null
      */
-    protected $deprecated;
+    protected ?bool $deprecated = null;
 
     /**
      * @param string|null $objectId
      * @return static
      */
-    public static function array(string $objectId = null): self
+    public static function array(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_ARRAY);
     }
@@ -229,7 +229,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function boolean(string $objectId = null): self
+    public static function boolean(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_BOOLEAN);
     }
@@ -238,7 +238,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function integer(string $objectId = null): self
+    public static function integer(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_INTEGER);
     }
@@ -247,7 +247,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function number(string $objectId = null): self
+    public static function number(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_NUMBER);
     }
@@ -256,7 +256,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function object(string $objectId = null): self
+    public static function object(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_OBJECT);
     }
@@ -265,7 +265,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function string(string $objectId = null): self
+    public static function string(string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_STRING);
     }
@@ -274,7 +274,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $title
      * @return static
      */
-    public function title(?string $title): self
+    public function title(?string $title): static
     {
         $instance = clone $this;
 
@@ -287,7 +287,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $description
      * @return static
      */
-    public function description(?string $description): self
+    public function description(?string $description): static
     {
         $instance = clone $this;
 
@@ -300,7 +300,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param mixed[] $enum
      * @return static
      */
-    public function enum(...$enum): self
+    public function enum(...$enum): static
     {
         $instance = clone $this;
 
@@ -313,7 +313,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param mixed|null $default
      * @return static
      */
-    public function default($default): self
+    public function default($default): static
     {
         $instance = clone $this;
 
@@ -326,7 +326,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $format
      * @return static
      */
-    public function format(?string $format): self
+    public function format(?string $format): static
     {
         $instance = clone $this;
 
@@ -339,7 +339,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $type
      * @return static
      */
-    public function type(?string $type): self
+    public function type(?string $type): static
     {
         $instance = clone $this;
 
@@ -349,10 +349,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Contracts\SchemaContract $items
+     * @param SchemaContract $items
      * @return static
      */
-    public function items(SchemaContract $items): self
+    public function items(SchemaContract $items): static
     {
         $instance = clone $this;
 
@@ -365,7 +365,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $maxItems
      * @return static
      */
-    public function maxItems(?int $maxItems): self
+    public function maxItems(?int $maxItems): static
     {
         $instance = clone $this;
 
@@ -378,7 +378,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $minItems
      * @return static
      */
-    public function minItems(?int $minItems): self
+    public function minItems(?int $minItems): static
     {
         $instance = clone $this;
 
@@ -391,7 +391,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param bool|null $uniqueItems
      * @return static
      */
-    public function uniqueItems(?bool $uniqueItems = true): self
+    public function uniqueItems(?bool $uniqueItems = true): static
     {
         $instance = clone $this;
 
@@ -404,7 +404,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $pattern
      * @return static
      */
-    public function pattern(?string $pattern): self
+    public function pattern(?string $pattern): static
     {
         $instance = clone $this;
 
@@ -417,7 +417,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $maxLength
      * @return static
      */
-    public function maxLength(?int $maxLength): self
+    public function maxLength(?int $maxLength): static
     {
         $instance = clone $this;
 
@@ -430,7 +430,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $minLength
      * @return static
      */
-    public function minLength(?int $minLength): self
+    public function minLength(?int $minLength): static
     {
         $instance = clone $this;
 
@@ -444,7 +444,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function maximum($maximum): self
+    public function maximum($maximum): static
     {
         if (
             !is_int($maximum)
@@ -466,7 +466,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function exclusiveMaximum($exclusiveMaximum): self
+    public function exclusiveMaximum($exclusiveMaximum): static
     {
         if (
             !is_int($exclusiveMaximum)
@@ -488,7 +488,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function minimum($minimum): self
+    public function minimum($minimum): static
     {
         if (
             !is_int($minimum)
@@ -510,7 +510,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function exclusiveMinimum($exclusiveMinimum): self
+    public function exclusiveMinimum($exclusiveMinimum): static
     {
         if (
             !is_int($exclusiveMinimum)
@@ -532,7 +532,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function multipleOf($multipleOf): self
+    public function multipleOf($multipleOf): static
     {
         if (
             !is_int($multipleOf)
@@ -550,11 +550,11 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Schema[]|string[] $required
-     * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
+     * @param Schema[]|string[] $required
      * @return static
+     *@throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      */
-    public function required(...$required): self
+    public function required(...$required): static
     {
         // Only allow Schema instances and strings.
         foreach ($required as &$require) {
@@ -584,10 +584,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Contracts\SchemaContract[] $properties
+     * @param SchemaContract[] $properties
      * @return static
      */
-    public function properties(SchemaContract ...$properties): self
+    public function properties(SchemaContract ...$properties): static
     {
         $instance = clone $this;
 
@@ -597,10 +597,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Schema|null $additionalProperties
+     * @param Schema|null $additionalProperties
      * @return static
      */
-    public function additionalProperties(?Schema $additionalProperties): self
+    public function additionalProperties(?Schema $additionalProperties): static
     {
         $instance = clone $this;
 
@@ -613,7 +613,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $maxProperties
      * @return static
      */
-    public function maxProperties(?int $maxProperties): self
+    public function maxProperties(?int $maxProperties): static
     {
         $instance = clone $this;
 
@@ -626,7 +626,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param int|null $minProperties
      * @return static
      */
-    public function minProperties(?int $minProperties): self
+    public function minProperties(?int $minProperties): static
     {
         $instance = clone $this;
 
@@ -639,7 +639,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param bool|null $nullable
      * @return static
      */
-    public function nullable(?bool $nullable = true): self
+    public function nullable(?bool $nullable = true): static
     {
         $instance = clone $this;
 
@@ -649,10 +649,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Discriminator|null $discriminator
+     * @param Discriminator|null $discriminator
      * @return static
      */
-    public function discriminator(?Discriminator $discriminator): self
+    public function discriminator(?Discriminator $discriminator): static
     {
         $instance = clone $this;
 
@@ -665,7 +665,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param bool|null $readOnly
      * @return static
      */
-    public function readOnly(?bool $readOnly = true): self
+    public function readOnly(?bool $readOnly = true): static
     {
         $instance = clone $this;
 
@@ -678,7 +678,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param bool|null $writeOnly
      * @return static
      */
-    public function writeOnly(?bool $writeOnly = true): self
+    public function writeOnly(?bool $writeOnly = true): static
     {
         $instance = clone $this;
 
@@ -688,10 +688,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Xml|null $xml
+     * @param Xml|null $xml
      * @return static
      */
-    public function xml(?Xml $xml): self
+    public function xml(?Xml $xml): static
     {
         $instance = clone $this;
 
@@ -701,10 +701,10 @@ class Schema extends BaseObject implements SchemaContract
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\ExternalDocs|null $externalDocs
+     * @param ExternalDocs|null $externalDocs
      * @return static
      */
-    public function externalDocs(?ExternalDocs $externalDocs): self
+    public function externalDocs(?ExternalDocs $externalDocs): static
     {
         $instance = clone $this;
 
@@ -717,7 +717,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param mixed|null $example
      * @return static
      */
-    public function example($example): self
+    public function example($example): static
     {
         $instance = clone $this;
 
@@ -730,7 +730,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param bool|null $deprecated
      * @return static
      */
-    public function deprecated(?bool $deprecated = true): self
+    public function deprecated(?bool $deprecated = true): static
     {
         $instance = clone $this;
 

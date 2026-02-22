@@ -8,20 +8,20 @@ use StoneHilt\OpenApi\Contracts\SchemaContract;
 use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
- * @property \StoneHilt\OpenApi\Objects\Schema[]|null $schemas
+ * @property Schema[]|null $schemas
  */
 abstract class SchemaComposition extends BaseObject implements SchemaContract
 {
     /**
-     * @var \StoneHilt\OpenApi\Objects\Schema[]|null
+     * @var Schema[]|null
      */
-    protected $schemas;
+    protected ?array $schemas = null;
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Schema[] $schemas
+     * @param Schema[] $schemas
      * @return static
      */
-    public function schemas(Schema ...$schemas): self
+    public function schemas(Schema ...$schemas): static
     {
         $instance = clone $this;
 

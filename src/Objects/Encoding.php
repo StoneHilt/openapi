@@ -8,7 +8,7 @@ use StoneHilt\OpenApi\Utilities\Arr;
 
 /**
  * @property string|null $contentType
- * @property \StoneHilt\OpenApi\Objects\Header[]|null $headers
+ * @property Header[]|null $headers
  * @property string|null $style
  * @property bool|null $explode
  * @property bool|null $allowReserved
@@ -18,33 +18,33 @@ class Encoding extends BaseObject
     /**
      * @var string|null
      */
-    protected $contentType;
+    protected ?string $contentType = null;
 
     /**
-     * @var \StoneHilt\OpenApi\Objects\Header[]|null
+     * @var Header[]|null
      */
-    protected $headers;
+    protected ?array $headers = null;
 
     /**
      * @var string|null
      */
-    protected $style;
+    protected ?string $style = null;
 
     /**
      * @var bool|null
      */
-    protected $explode;
+    protected ?bool $explode = null;
 
     /**
      * @var bool|null
      */
-    protected $allowReserved;
+    protected ?bool $allowReserved = null;
 
     /**
      * @param string|null $contentType
      * @return static
      */
-    public function contentType(?string $contentType): self
+    public function contentType(?string $contentType): static
     {
         $instance = clone $this;
 
@@ -54,10 +54,10 @@ class Encoding extends BaseObject
     }
 
     /**
-     * @param \StoneHilt\OpenApi\Objects\Header[] $headers
+     * @param Header[] $headers
      * @return static
      */
-    public function headers(Header ...$headers): self
+    public function headers(Header ...$headers): static
     {
         $instance = clone $this;
 
@@ -70,7 +70,7 @@ class Encoding extends BaseObject
      * @param string|null $style
      * @return static
      */
-    public function style(?string $style): self
+    public function style(?string $style): static
     {
         $instance = clone $this;
 
@@ -83,7 +83,7 @@ class Encoding extends BaseObject
      * @param bool|null $explode
      * @return static
      */
-    public function explode(?bool $explode = true): self
+    public function explode(?bool $explode = true): static
     {
         $instance = clone $this;
 
@@ -96,7 +96,7 @@ class Encoding extends BaseObject
      * @param bool|null $allowReserved
      * @return static
      */
-    public function allowReserved(?bool $allowReserved = true): self
+    public function allowReserved(?bool $allowReserved = true): static
     {
         $instance = clone $this;
 
