@@ -10,16 +10,16 @@ use StoneHilt\OpenApi\Utilities\Arr;
  * @property string|null $route
  * @property string|null $summary
  * @property string|null $description
- * @property \StoneHilt\OpenApi\Objects\Operation[]|null $operations
- * @property \StoneHilt\OpenApi\Objects\Server[]|null $servers
- * @property \StoneHilt\OpenApi\Objects\Parameter[]|null $parameters
+ * @property Operation[]|null $operations
+ * @property Server[]|null $servers
+ * @property Parameter[]|null $parameters
  */
 class PathItem extends BaseObject
 {
     /**
      * @var string|null
      */
-    protected $route;
+    protected ?string $uri = null;
 
     /**
      * @var string|null
@@ -47,14 +47,14 @@ class PathItem extends BaseObject
     protected ?array $parameters = null;
 
     /**
-     * @param string|null $route
+     * @param string $uri
      * @return static
      */
-    public function route(?string $route): self
+    public function uri(?string $uri): static
     {
         $instance = clone $this;
 
-        $instance->route = $route;
+        $instance->uri = $uri;
 
         return $instance;
     }

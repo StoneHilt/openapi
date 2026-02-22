@@ -53,7 +53,7 @@ class PathsBuilder
             })
             ->groupBy(static fn (RouteInformation $routeInformation) => $routeInformation->uri)
             ->map(function (Collection $routes, $uri) {
-                $pathItem = PathItem::create()->route($uri);
+                $pathItem = PathItem::create()->uri($uri);
 
                 $operations = $this->operationsBuilder->build($routes);
 

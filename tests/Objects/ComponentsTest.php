@@ -48,7 +48,7 @@ class ComponentsTest extends TestCase
         $link = Link::create('LinkExample');
 
         $callback = PathItem::create('MyEvent')
-            ->route('{$request.query.callbackUrl}')
+            ->uri('{$request.query.callbackUrl}')
             ->operations(
                 Operation::post()->requestBody(
                     RequestBody::create()

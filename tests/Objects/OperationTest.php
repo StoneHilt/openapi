@@ -25,7 +25,7 @@ class OperationTest extends TestCase
             ->type(SecurityScheme::TYPE_OAUTH2);
 
         $callback = PathItem::create('MyEvent')
-            ->route('{$request.query.callbackUrl}')
+            ->uri('{$request.query.callbackUrl}')
             ->operations(
                 Operation::post()->requestBody(
                     RequestBody::create()

@@ -20,7 +20,7 @@ class ExtensionsBuilderTest extends TestCase
         $openApi = OpenApi::create()
             ->paths(
                 PathItem::create()
-                    ->route('/foo')
+                    ->uri('/foo')
                     ->operations($operation)
             );
 
@@ -48,7 +48,7 @@ class ExtensionsBuilderTest extends TestCase
         $openApi = OpenApi::create()
             ->paths(
                 PathItem::create()
-                    ->route('/foo')
+                    ->uri('/foo')
                     ->operations($operation)
             );
 

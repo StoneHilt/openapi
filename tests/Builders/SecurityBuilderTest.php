@@ -40,7 +40,7 @@ class SecurityBuilderTest extends TestCase
             ->components($components)
             ->paths(
                 PathItem::create()
-                    ->route('/foo')
+                    ->uri('/foo')
                     ->operations($operation)
             );
 
@@ -104,7 +104,7 @@ class SecurityBuilderTest extends TestCase
         ->components($components)
         ->paths(
             PathItem::create()
-                ->route('/foo')
+                ->uri('/foo')
                 ->operations($operation)
         );
 
@@ -179,7 +179,7 @@ class SecurityBuilderTest extends TestCase
         ->components($components)
         ->paths(
             PathItem::create()
-                ->route('/foo')
+                ->uri('/foo')
                 ->operations(...$operations)
         );
 

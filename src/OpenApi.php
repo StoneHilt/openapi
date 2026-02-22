@@ -208,7 +208,7 @@ class OpenApi extends BaseObject
     {
         $paths = [];
         foreach ($this->paths ?? [] as $path) {
-            $paths[$path->route] = $path;
+            $paths[$path->uri] = $path;
         }
 
         return Arr::filter([

@@ -228,7 +228,7 @@ class Components extends BaseObject
 
         $callbacks = [];
         foreach ($this->callbacks ?? [] as $callback) {
-            $callbacks[$callback->objectId][$callback->route] = $callback;
+            $callbacks[$callback->objectId][$callback->uri] = $callback;
         }
 
         return Arr::filter([

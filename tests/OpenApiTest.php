@@ -114,10 +114,10 @@ class OpenApiTest extends TestCase
         $paths = [
             // Create a path along with it's operations.
             PathItem::create()
-                ->route('/audits')
+                ->uri('/audits')
                 ->operations($listAudits, $createAudit),
             PathItem::create()
-                ->route('/audits/{audit}')
+                ->uri('/audits/{audit}')
                 ->operations($readAudit),
         ];
 
@@ -179,7 +179,7 @@ class OpenApiTest extends TestCase
                 )
                 ->paths(
                     PathItem::create()
-                        ->route('/foo')
+                        ->uri('/foo')
                         ->operations(
                             Operation::get()
                         )

@@ -56,7 +56,7 @@ class ReadmeTest extends TestCase
 
         // Define the /users path along with the supported operations.
         $usersPath = PathItem::create()
-            ->route('/users')
+            ->uri('/users')
             ->operations($showUser);
 
         // Create the main OpenAPI object composed off everything created above.
@@ -98,7 +98,7 @@ class ReadmeTest extends TestCase
     public function unsetting_variadic_methods()
     {
         $path = PathItem::create()
-            ->route('/users');
+            ->uri('/users');
 
         $openApi = OpenAPI::create()
             ->paths($path);
