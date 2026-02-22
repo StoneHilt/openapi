@@ -11,9 +11,9 @@ Where Schemas should belong to specific collections, the 'Collection' annotation
 ```php
 namespace App\OpenApi\V1\Schemas;
 
-use Vyuldashev\LaravelOpenApi\Factories\SchemaFactory;
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\Annotations as OpenApi;
+use StoneHilt\OpenApi\Factories\SchemaFactory;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\Annotations as OpenApi;
 
 /**
  * @OpenApi\Collection(name = "v1")
@@ -29,7 +29,7 @@ Controller methods can also be assigned to a collection using the 'Collection' a
 ```php
 namespace App\Api\V1\Controllers;
 
-use Vyuldashev\LaravelOpenApi\Annotations as OpenApi;
+use StoneHilt\OpenApi\Annotations as OpenApi;
 
 /**
  * @OpenApi\Collection(name = "v1")
@@ -72,8 +72,8 @@ Custom controller:
 
 namespace App\OpenApi;
 
-use GoldSpecDigital\ObjectOrientedOAS\OpenApi;
-use Vyuldashev\LaravelOpenApi\Generator;
+use StoneHilt\OpenApi\OpenApi;
+use StoneHilt\OpenApi\Generator;
 
 class OpenApiController
 {
@@ -93,7 +93,7 @@ namespace App\Providers;
 
 use App\OpenApi\OpenApiController as CustomOpenApiController;
 use Illuminate\Support\ServiceProvider;
-use Vyuldashev\LaravelOpenApi\Http\OpenApiController;
+use StoneHilt\OpenApi\Http\OpenApiController;
 
 class AppServiceProvider extends ServiceProvider
 {

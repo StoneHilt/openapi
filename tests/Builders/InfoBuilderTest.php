@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Vyuldashev\LaravelOpenApi\Tests\Builders;
+namespace StoneHilt\OpenApi\Tests\Builders;
 
-use Vyuldashev\LaravelOpenApi\Builders\InfoBuilder;
-use Vyuldashev\LaravelOpenApi\Tests\TestCase;
+use StoneHilt\OpenApi\Builders\InfoBuilder;
+use StoneHilt\OpenApi\Tests\TestCase;
 
 class InfoBuilderTest extends TestCase
 {

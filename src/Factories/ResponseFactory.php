@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Response;
-use Vyuldashev\LaravelOpenApi\Concerns\Referencable;
+use StoneHilt\OpenApi\Objects\Response;
+use StoneHilt\OpenApi\Concerns\Referencable;
 
 abstract class ResponseFactory
 {

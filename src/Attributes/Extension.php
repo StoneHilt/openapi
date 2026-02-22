@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Attributes;
+namespace StoneHilt\OpenApi\Attributes;
 
 use Attribute;
 use InvalidArgumentException;
-use Vyuldashev\LaravelOpenApi\Factories\ExtensionFactory;
+use StoneHilt\OpenApi\Factories\ExtensionFactory;
 
 #[Attribute(Attribute::IS_REPEATABLE | Attribute::TARGET_METHOD)]
 class Extension
@@ -13,7 +13,7 @@ class Extension
     public ?string $key;
     public ?string $value;
 
-    public function __construct(string $factory = null, string $key = null, string $value = null)
+    public function __construct(?string $factory = null, ?string $key = null, ?string $value = null)
     {
         if ($factory) {
             $this->factory = class_exists($factory) ? $factory : app()->getNamespace().'OpenApi\\Extensions\\'.$factory;

@@ -1,17 +1,17 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths\Operation;
+namespace StoneHilt\OpenApi\Builders\Paths\Operation;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Parameter;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Schema;
+use StoneHilt\OpenApi\Objects\Parameter;
+use StoneHilt\OpenApi\Objects\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use phpDocumentor\Reflection\DocBlock\Tags\Param;
 use ReflectionParameter;
-use Vyuldashev\LaravelOpenApi\Attributes\Parameters;
-use Vyuldashev\LaravelOpenApi\Factories\ParametersFactory;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
-use Vyuldashev\LaravelOpenApi\SchemaHelpers;
+use StoneHilt\OpenApi\Attributes\Parameters;
+use StoneHilt\OpenApi\Factories\ParametersFactory;
+use StoneHilt\OpenApi\RouteInformation;
+use StoneHilt\OpenApi\SchemaHelpers;
 
 class ParametersBuilder
 {

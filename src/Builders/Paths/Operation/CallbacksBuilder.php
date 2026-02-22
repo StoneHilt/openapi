@@ -1,11 +1,11 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths\Operation;
+namespace StoneHilt\OpenApi\Builders\Paths\Operation;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\PathItem;
-use Vyuldashev\LaravelOpenApi\Attributes\Callback as CallbackAttribute;
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Objects\PathItem;
+use StoneHilt\OpenApi\Attributes\Callback as CallbackAttribute;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\RouteInformation;
 
 class CallbacksBuilder
 {

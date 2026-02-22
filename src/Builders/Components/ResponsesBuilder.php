@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Components;
+namespace StoneHilt\OpenApi\Builders\Components;
 
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\Factories\ResponseFactory;
-use Vyuldashev\LaravelOpenApi\Generator;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\Factories\ResponseFactory;
+use StoneHilt\OpenApi\Generator;
 
 class ResponsesBuilder extends Builder
 {

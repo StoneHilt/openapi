@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Vyuldashev\LaravelOpenApi\Tests\Builders;
+namespace StoneHilt\OpenApi\Tests\Builders;
 
-use Vyuldashev\LaravelOpenApi\Builders\TagsBuilder;
-use Vyuldashev\LaravelOpenApi\Tests\TestCase;
+use StoneHilt\OpenApi\Builders\TagsBuilder;
+use StoneHilt\OpenApi\Tests\TestCase;
 
 class TagsBuilderTest extends TestCase
 {

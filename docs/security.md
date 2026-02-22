@@ -13,7 +13,7 @@ After you generate a security scheme, it will be declared in the `securityScheme
 ```php
 
 'security' => [
-  GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityRequirement::create()->securityScheme('BearerToken'),
+  StoneHilt\OpenApi\Objects\SecurityRequirement::create()->securityScheme('BearerToken'),
 ],
 
 ```
@@ -21,7 +21,7 @@ After you generate a security scheme, it will be declared in the `securityScheme
 ## Operation level example
 
 ```php
-use Vyuldashev\LaravelOpenApi\Attributes as OpenApi;
+use StoneHilt\OpenApi\Attributes as OpenApi;
 
 #[OpenApi\PathItem]
 class UserController extends Controller

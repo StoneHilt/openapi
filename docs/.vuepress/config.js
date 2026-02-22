@@ -1,14 +1,14 @@
 module.exports = {
-  base: '/laravel-openapi/',
+  base: '/openapi/',
   title: 'Laravel OpenAPI',
   description: 'Generate OpenAPI specification for Laravel Applications',
   themeConfig: {
     nav: [
       {text: 'Home', link: '/'},
-      {text: 'GitHub', link: 'http://github.com/vyuldashev/laravel-openapi'},
+      {text: 'GitHub', link: 'http://github.com/stonehilt/openapi'},
       {
         text: 'Packagist',
-        link: 'https://packagist.org/packages/vyuldashev/laravel-openapi',
+        link: 'https://packagist.org/packages/stonehilt/openapi',
       },
     ],
     sidebar: [

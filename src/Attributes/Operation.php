@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Attributes;
+namespace StoneHilt\OpenApi\Attributes;
 
 use Attribute;
 use InvalidArgumentException;
-use Vyuldashev\LaravelOpenApi\Factories\SecuritySchemeFactory;
+use StoneHilt\OpenApi\Factories\SecuritySchemeFactory;
 
 #[Attribute(Attribute::TARGET_METHOD)]
 class Operation
@@ -23,7 +23,7 @@ class Operation
     /**
      * @param  string|null  $id
      * @param  array  $tags
-     * @param  \Vyuldashev\LaravelOpenApi\Factories\SecuritySchemeFactory|string|null  $security
+     * @param  \StoneHilt\OpenApi\Factories\SecuritySchemeFactory|string|null  $security
      * @param  string|null  $method
      *
      * @throws InvalidArgumentException

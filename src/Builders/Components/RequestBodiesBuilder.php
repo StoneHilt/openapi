@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Components;
+namespace StoneHilt\OpenApi\Builders\Components;
 
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\Factories\RequestBodyFactory;
-use Vyuldashev\LaravelOpenApi\Generator;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\Factories\RequestBodyFactory;
+use StoneHilt\OpenApi\Generator;
 
 class RequestBodiesBuilder extends Builder
 {

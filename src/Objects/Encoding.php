@@ -1,0 +1,126 @@
+<?php
+
+declare(strict_types=1);
+
+namespace StoneHilt\OpenApi\Objects;
+
+use StoneHilt\OpenApi\Utilities\Arr;
+
+/**
+ * @property string|null $contentType
+ * @property Header[]|null $headers
+ * @property string|null $style
+ * @property bool|null $explode
+ * @property bool|null $allowReserved
+ */
+class Encoding extends BaseObject
+{
+    /**
+     * @var string|null
+     */
+    protected ?string $contentType = null;
+
+    /**
+     * @var Header[]|null
+     */
+    protected ?array $headers = null;
+
+    /**
+     * @var string|null
+     */
+    protected ?string $style = null;
+
+    /**
+     * @var bool|null
+     */
+    protected ?bool $explode = null;
+
+    /**
+     * @var bool|null
+     */
+    protected ?bool $allowReserved = null;
+
+    /**
+     * @param string|null $contentType
+     * @return static
+     */
+    public function contentType(?string $contentType): static
+    {
+        $instance = clone $this;
+
+        $instance->contentType = $contentType;
+
+        return $instance;
+    }
+
+    /**
+     * @param Header[] $headers
+     * @return static
+     */
+    public function headers(Header ...$headers): static
+    {
+        $instance = clone $this;
+
+        $instance->headers = $headers ?: null;
+
+        return $instance;
+    }
+
+    /**
+     * @param string|null $style
+     * @return static
+     */
+    public function style(?string $style): static
+    {
+        $instance = clone $this;
+
+        $instance->style = $style;
+
+        return $instance;
+    }
+
+    /**
+     * @param bool|null $explode
+     * @return static
+     */
+    public function explode(?bool $explode = true): static
+    {
+        $instance = clone $this;
+
+        $instance->explode = $explode;
+
+        return $instance;
+    }
+
+    /**
+     * @param bool|null $allowReserved
+     * @return static
+     */
+    public function allowReserved(?bool $allowReserved = true): static
+    {
+        $instance = clone $this;
+
+        $instance->allowReserved = $allowReserved;
+
+        return $instance;
+    }
+
+    /**
+     * @return array
+     */
+    protected function generate(): array
+    {
+        $headers = [];
+        foreach ($this->headers ?? [] as $header) {
+            $headers[$header->objectId] = $header;
+        }
+
+        return Arr::filter([
+            'contentType' => $this->contentType,
+            'headers' => $headers ?: null,
+            'style' => $this->style,
+            'explode' => $this->explode,
+            'allowReserved' => $this->allowReserved,
+        ]);
+    }
+}

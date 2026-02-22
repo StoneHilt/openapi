@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use Vyuldashev\LaravelOpenApi\Factories\ExtensionFactory;
+use StoneHilt\OpenApi\Factories\ExtensionFactory;
 
 class DummyClass extends ExtensionFactory
 {

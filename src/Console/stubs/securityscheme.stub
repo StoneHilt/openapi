@@ -2,8 +2,8 @@
 
 namespace DummyNamespace;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityScheme;
-use Vyuldashev\LaravelOpenApi\Factories\SecuritySchemeFactory;
+use StoneHilt\OpenApi\Objects\SecurityScheme;
+use StoneHilt\OpenApi\Factories\SecuritySchemeFactory;
 
 class DummyClass extends SecuritySchemeFactory
 {

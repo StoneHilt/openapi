@@ -1,9 +1,9 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Factories;
+namespace StoneHilt\OpenApi\Factories;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\RequestBody;
-use Vyuldashev\LaravelOpenApi\Concerns\Referencable;
+use StoneHilt\OpenApi\Objects\RequestBody;
+use StoneHilt\OpenApi\Concerns\Referencable;
 
 abstract class RequestBodyFactory
 {

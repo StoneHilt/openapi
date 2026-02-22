@@ -1,14 +1,14 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders;
+namespace StoneHilt\OpenApi\Builders;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Components;
-use Vyuldashev\LaravelOpenApi\Builders\Components\CallbacksBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\RequestBodiesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\ResponsesBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\SchemasBuilder;
-use Vyuldashev\LaravelOpenApi\Builders\Components\SecuritySchemesBuilder;
-use Vyuldashev\LaravelOpenApi\Generator;
+use StoneHilt\OpenApi\Objects\Components;
+use StoneHilt\OpenApi\Builders\Components\CallbacksBuilder;
+use StoneHilt\OpenApi\Builders\Components\RequestBodiesBuilder;
+use StoneHilt\OpenApi\Builders\Components\ResponsesBuilder;
+use StoneHilt\OpenApi\Builders\Components\SchemasBuilder;
+use StoneHilt\OpenApi\Builders\Components\SecuritySchemesBuilder;
+use StoneHilt\OpenApi\Generator;
 
 class ComponentsBuilder
 {

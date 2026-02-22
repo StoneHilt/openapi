@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths\Operation;
+namespace StoneHilt\OpenApi\Builders\Paths\Operation;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\SecurityRequirement;
-use Vyuldashev\LaravelOpenApi\Attributes\Operation as OperationAttribute;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Objects\SecurityRequirement;
+use StoneHilt\OpenApi\Attributes\Operation as OperationAttribute;
+use StoneHilt\OpenApi\RouteInformation;
 
 class SecurityBuilder
 {

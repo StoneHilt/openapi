@@ -1,10 +1,10 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders;
+namespace StoneHilt\OpenApi\Builders;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Contact;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Info;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\License;
+use StoneHilt\OpenApi\Objects\Contact;
+use StoneHilt\OpenApi\Objects\Info;
+use StoneHilt\OpenApi\Objects\License;
 use Illuminate\Support\Arr;
 
 class InfoBuilder

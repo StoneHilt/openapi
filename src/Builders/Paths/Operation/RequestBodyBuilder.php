@@ -1,12 +1,12 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths\Operation;
+namespace StoneHilt\OpenApi\Builders\Paths\Operation;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\RequestBody;
-use Vyuldashev\LaravelOpenApi\Attributes\RequestBody as RequestBodyAttribute;
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\Factories\RequestBodyFactory;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Objects\RequestBody;
+use StoneHilt\OpenApi\Attributes\RequestBody as RequestBodyAttribute;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\Factories\RequestBodyFactory;
+use StoneHilt\OpenApi\RouteInformation;
 
 class RequestBodyBuilder
 {

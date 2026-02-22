@@ -1,15 +1,15 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Tests\Builders;
+namespace StoneHilt\OpenApi\Tests\Builders;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Operation;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\PathItem;
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Schema;
-use GoldSpecDigital\ObjectOrientedOAS\OpenApi;
-use Vyuldashev\LaravelOpenApi\Attributes\Extension;
-use Vyuldashev\LaravelOpenApi\Builders\ExtensionsBuilder;
-use Vyuldashev\LaravelOpenApi\Factories\ExtensionFactory;
-use Vyuldashev\LaravelOpenApi\Tests\TestCase;
+use StoneHilt\OpenApi\Objects\Operation;
+use StoneHilt\OpenApi\Objects\PathItem;
+use StoneHilt\OpenApi\Objects\Schema;
+use StoneHilt\OpenApi\OpenApi;
+use StoneHilt\OpenApi\Attributes\Extension;
+use StoneHilt\OpenApi\Builders\ExtensionsBuilder;
+use StoneHilt\OpenApi\Factories\ExtensionFactory;
+use StoneHilt\OpenApi\Tests\TestCase;
 
 class ExtensionsBuilderTest extends TestCase
 {
@@ -20,7 +20,7 @@ class ExtensionsBuilderTest extends TestCase
         $openApi = OpenApi::create()
             ->paths(
                 PathItem::create()
-                    ->route('/foo')
+                    ->uri('/foo')
                     ->operations($operation)
             );
 
@@ -48,7 +48,7 @@ class ExtensionsBuilderTest extends TestCase
         $openApi = OpenApi::create()
             ->paths(
                 PathItem::create()
-                    ->route('/foo')
+                    ->uri('/foo')
                     ->operations($operation)
             );
 

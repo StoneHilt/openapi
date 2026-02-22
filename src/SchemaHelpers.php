@@ -1,8 +1,8 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi;
+namespace StoneHilt\OpenApi;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Schema;
+use StoneHilt\OpenApi\Objects\Schema;
 use ReflectionType;
 
 class SchemaHelpers

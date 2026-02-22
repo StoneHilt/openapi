@@ -1,11 +1,11 @@
 <?php
 
-namespace Vyuldashev\LaravelOpenApi\Builders\Paths\Operation;
+namespace StoneHilt\OpenApi\Builders\Paths\Operation;
 
-use GoldSpecDigital\ObjectOrientedOAS\Objects\Response;
-use Vyuldashev\LaravelOpenApi\Attributes\Response as ResponseAttribute;
-use Vyuldashev\LaravelOpenApi\Contracts\Reusable;
-use Vyuldashev\LaravelOpenApi\RouteInformation;
+use StoneHilt\OpenApi\Objects\Response;
+use StoneHilt\OpenApi\Attributes\Response as ResponseAttribute;
+use StoneHilt\OpenApi\Contracts\Reusable;
+use StoneHilt\OpenApi\RouteInformation;
 
 class ResponsesBuilder
 {
