@@ -220,7 +220,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function array(string $objectId = null): static
+    public static function array(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_ARRAY);
     }
@@ -229,7 +229,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function boolean(string $objectId = null): static
+    public static function boolean(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_BOOLEAN);
     }
@@ -238,7 +238,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function integer(string $objectId = null): static
+    public static function integer(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_INTEGER);
     }
@@ -247,7 +247,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function number(string $objectId = null): static
+    public static function number(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_NUMBER);
     }
@@ -256,7 +256,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function object(string $objectId = null): static
+    public static function object(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_OBJECT);
     }
@@ -265,7 +265,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param string|null $objectId
      * @return static
      */
-    public static function string(string $objectId = null): static
+    public static function string(?string $objectId = null): static
     {
         return static::create($objectId)->type(static::TYPE_STRING);
     }
@@ -313,7 +313,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param mixed|null $default
      * @return static
      */
-    public function default($default): static
+    public function default(mixed $default): static
     {
         $instance = clone $this;
 
@@ -444,7 +444,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function maximum($maximum): static
+    public function maximum(int|float|null $maximum): static
     {
         if (
             !is_int($maximum)
@@ -466,7 +466,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function exclusiveMaximum($exclusiveMaximum): static
+    public function exclusiveMaximum(int|float|null $exclusiveMaximum): static
     {
         if (
             !is_int($exclusiveMaximum)
@@ -488,7 +488,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function minimum($minimum): static
+    public function minimum(int|float|null $minimum): static
     {
         if (
             !is_int($minimum)
@@ -510,7 +510,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function exclusiveMinimum($exclusiveMinimum): static
+    public function exclusiveMinimum(int|float|null $exclusiveMinimum): static
     {
         if (
             !is_int($exclusiveMinimum)
@@ -532,7 +532,7 @@ class Schema extends BaseObject implements SchemaContract
      * @throws \StoneHilt\OpenApi\Exceptions\InvalidArgumentException
      * @return static
      */
-    public function multipleOf($multipleOf): static
+    public function multipleOf(int|float|null $multipleOf): static
     {
         if (
             !is_int($multipleOf)
@@ -717,7 +717,7 @@ class Schema extends BaseObject implements SchemaContract
      * @param mixed|null $example
      * @return static
      */
-    public function example($example): static
+    public function example(mixed $example): static
     {
         $instance = clone $this;
 
